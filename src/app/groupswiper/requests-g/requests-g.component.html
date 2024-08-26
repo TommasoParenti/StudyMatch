@@ -1,0 +1,27 @@
+<div id="background" class="background fade-in">
+    <div id="block" class="block fade-in-up">
+        <a class="return" (click)="fadeout('groupswiper')"><i class="bi bi-arrow-left large-stroke" ></i>Torna indietro</a>
+        <div class="content">
+            <div class="text">
+                <h2>Richieste accesso al gruppo</h2>
+                <p>Accetta o rifiuta le richieste per entrare ad un tuo gruppo in cui partecipi.</p>
+            </div>
+            <div class="profiles">
+                <ng-container *ngFor="let item of requests | keyvalue" >
+                    <div class="profile fade-in-up" *ngIf="requests != undefined && item != undefined" [id]="'profile-'+item.value.id">
+                        <img [src]="item.value.profileImageURL">
+                        <div class="information">
+                            <h3>{{item.value.surname}} {{item.value.name}}</h3>
+                            <p>{{item.value.age}}, {{item.value.city}}, {{item.value.faculty}}</p>
+                            <p>{{item.value.locationAndTime}}</p>
+                            <p class="namegroup">Richiesta per {{item.value.namegroup}}</p>
+                            <button (click)="accept(item.value.id, item.value.age)" [id]="'request-button-'+item.value.id">Accetta</button>
+                            <button class="x" (click)="reject(item.value.id)"><i class="bi bi-x"></i></button>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <h4 *ngIf="isEmpty(requests)" class="end-request">Nessuna richiesta...</h4>
+        </div>
+    </div>
+</div>

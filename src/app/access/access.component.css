@@ -1,0 +1,105 @@
+.right-box {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 95vh;
+    width: 63%;
+    border-radius: 19px;
+    background: #82beff;
+    background: linear-gradient(54deg,#82beff 0,#007aff 100%)
+}
+
+.left-text,.right-text {
+    position: absolute;
+    color: #fff;
+    font-weight: 600;
+    font-size: 5vw;
+    z-index: 0
+}
+
+.left-text {
+    top: 5%;
+    left: 1%
+}
+
+.right-text {
+    float: right;
+    top: 67%;
+    right: 1%
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+img {
+    position: relative;
+    width: 70%;
+    height: auto;
+    min-width: 700px;
+    z-index: 100
+}
+
+app-segmented-control {
+    display: block;
+    width: 30%;
+    position: relative;
+    top: 1rem;
+    left: 1rem
+}
+
+.prevent-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+@media all and (min-width:1620px) and (max-width:1910px) {
+    .left-text {
+        top: 5%
+    }
+}
+
+@media all and (min-width:1320px) and (max-width:1620px) {
+    .left-text {
+        top: 9%
+    }
+}
+
+@media all and (min-width:1024px) and (max-width:1320px) {
+    .left-text {
+        top: 10%
+    }
+}
+
+@media all and (min-width:768px) and (max-width:1070px) {
+    .right-box {
+        display: none
+    }
+}
+
+@media all and (min-width:480px) and (max-width:768px) {
+    .right-box {
+        display: none
+    }
+}
+
+@media all and (max-width:480px) {
+    .right-box {
+        display: none
+    }
+}
+
+@media all and (max-height:500px) {
+    img {
+        display: none
+    }
+}

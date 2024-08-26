@@ -1,0 +1,20 @@
+<a class="icon large-stroke" (click)="mobile()">
+  <i class="bi bi-list"></i>
+</a>
+<div class="topnav" id="myTopnav">
+  <div class="left-column">
+    <img id="img" [src]="imageurl" class="displaynotmobile"><label><h1>StudyMatch</h1></label>
+  </div>
+  <div class="middle-column">
+    <app-segmented-control textOne="Studenti" textTwo="Gruppi" toFirst="/userswiper" toSecond="/groupswiper" background="#EEEEEE"></app-segmented-control>
+  </div>
+  <div class="right-column">
+    <a routerLink="./search" id="search" name="search"><i class="bi bi-search large-stroke"></i></a><label>Cerca</label>
+    <a routerLink="./create-group" id="add-group" name="add-group"><i class="bi bi-patch-plus-fill"></i></a><label id="label-add-group">Aggiungi un gruppo</label>
+    <a routerLink="./requests" id="accept-request" name="accept-request"><i class="bi bi-send-fill"><span class="badge">{{requestsnotify}}</span></i></a><label >Richieste</label>
+    <a routerLink="./messages" id="messages" name="messages"><i class="bi bi-chat-dots-fill"><span class="badge">{{messagesnotify}}</span></i></a><label>Messaggi</label>
+    <a id="filters" name="filters" class="displayblock" (click)="sendclick()"><i class="bi bi-pencil-fill"></i></a><label class="displaynone">Filtri</label>
+    <a id="logout" name="logout" (click)="logout()"><i class="bi bi-box-arrow-left large-stroke-min"></i></a><label>Esci</label>
+    <a routerLink="./personal-profile" id="personalprofile" name="personalprofile" class="display"><img class="profile" [src]="user.profileImageURL"></a>
+  </div>
+</div>

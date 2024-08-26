@@ -1,0 +1,30 @@
+<div id="background" class="background fade-in">
+    <div class="correct-float fade-in-bubble" id="correct-copy">
+        <h6>Contatto copiato</h6>
+        <p>Hai copiato il contatto; adesso lo puoi incollare.</p>                                                                                      
+    </div>
+    <div id="block" class="block fade-in-up">
+        <a class="return" (click)="fadeout('userswiper')"><i class="bi bi-arrow-left large-stroke" ></i>Torna indietro</a>
+        <div class="content">
+            <div class="text">
+                <h2>Messaggi</h2>
+                <p>Visualizza in questa sezione tutte le persone di cui hai accettato la richiesta o che ti hanno accettato la richiesta. Tramite i loro social puoi contattarli!</p>
+            </div>
+            <div class="profiles">
+                <div class="profile" *ngFor="let item of matched | keyvalue">
+                    <img [src]="item.value.profileImageURL">
+                    <div class="information">
+                        <h3>{{item.value.surname}} {{item.value.name}}<i class="bi bi-patch-check-fill verify" *ngIf="item.value.verified"></i></h3>
+                        <p><b>Informazioni</b>: {{item.value.age}}, {{item.value.city}}, {{item.value.faculty}}</p>
+                        <p><b>Luogo e orario</b>: {{item.value.locationAndTime}}</p>
+                        <p class="descrizione">{{item.value.description}}</p>
+                        <a [href]="'https://www.instagram.com/'+item.value.instagram.substring(1)" target="_blank"><button class="firstButton">IG: {{item.value.instagram}}</button></a>
+                        <a (click)="copy(item.value.telegram)"><button>TG: {{item.value.telegram}}</button></a>
+                        <a (click)="copy(item.value.phone)"><button class="lastButton">{{item.value.phone}}</button></a>
+                    </div>
+                </div>
+            </div>
+            <h4 *ngIf="isEmpty(matched)" class="end-message">Nessun match ancora fatto...</h4>
+        </div>
+    </div>
+</div>

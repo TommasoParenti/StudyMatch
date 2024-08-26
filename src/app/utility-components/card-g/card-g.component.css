@@ -1,0 +1,133 @@
+@import url(../../../animations.css);
+
+.card {
+    position: relative;
+    background-size: cover;
+    width: 20rem;
+    height: 30rem;
+    background-color: #E6E6E6;
+    border-radius: 28px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(2px 0px 10px rgba(0, 0, 0, 0.425));
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 28px;
+    transition: .4s;
+}
+
+.red::after {
+    content: url('../../../assets/dislike-1.svg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(48, 2, 2, 0.616);
+    transition: .4s;
+}
+
+.green::after {
+    content: url('../../../assets/like-1.svg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(10, 54, 14, 0.616);
+    transition: .4s;
+}
+
+.images {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.image {
+    position: relative;
+    width: 44.2%;
+    height: 8rem;
+    margin: 0.5rem;
+}
+
+.oneImage {
+    width: 90%;
+    height: 16rem;
+}
+
+.twoImages {
+    width: 90%;
+    height: 12rem;
+}
+
+.threeImages {
+    width: 90%;
+    height: 8rem;
+}
+
+.image-more::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.527);
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+}
+
+.image-more p {
+    position: absolute;
+    top: 40%;
+    right: 45%;
+    z-index: 100;
+    color: white;
+    font-weight: 500;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.219);
+}
+
+.prevent-select {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.grab {
+    cursor: grab;
+}
+
+.display-none {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn ease-in .1s;
+    -webkit-animation: fadeIn ease-in .1s;
+    -moz-animation: fadeIn ease-in .1s;
+    -o-animation: fadeIn ease-in .1s;
+    -ms-animation: fadeIn ease-in .1s
+}
+
+.fade-out {
+    animation: fadeOut ease-in 0.5s;
+    -webkit-animation: fadeOut ease-in 0.5s;
+    -moz-animation: fadeOut ease-in 0.5s;
+    -o-animation: fadeOut ease-in 0.5s;
+    -ms-animation: fadeOut ease-in 0.5s
+}

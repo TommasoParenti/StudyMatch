@@ -1,0 +1,45 @@
+<div id="background" class="background fade-in">
+    <div class="error-float fade-in-bubble" id="error-cmplt-2">
+        <h6>Errore</h6>
+        <p>{{message}}</p>
+    </div>
+    <div id="block" class="block fade-in-up">
+        <a (click)="fadeout('access/register/complete-profile')" class="return"><i
+                class="bi bi-arrow-left large-stroke"></i>Torna indietro</a>
+        <form id="form">
+            <div class="text">
+                <h2>Completa il profilo</h2>
+                <p>Per completare il profilo fornisci alcune informazioni che permetteranno di farti conoscere
+                    brevemente gli altri studenti</p>
+            </div>
+            <div class="inputs">
+                <div>
+                    <input type="text" placeholder="Telegram (@...)" id="Telegram">
+                    <input type="text" placeholder="Instagram (@...)" id="Instagram">
+                    <input type="text" placeholder="Numero di telefono  (+39 ...)" id="Telefono">
+                </div>
+            </div>
+            <button type="button" class="larger-button" (click)="fadeoutsv()">Registrati</button>
+        </form>
+    </div>
+    <div id="photo-block" class="photo-block fade-in">
+        <a (click)="fadeout('access/register/complete-profile')" class="return"><i
+                class="bi bi-arrow-left large-stroke"></i>Torna indietro</a>
+        <div *ngIf="!impossibletoverify" class="photo-information">
+            <h2>Scattati una foto</h2>
+            <p>Per verificare che tu sia effettivamente la persona che sta creando il profilo, scattati una foto. Questa
+                non verrà ne utilizzata ne salvata.</p>
+            <video #video autoplay class="fade-in"></video>
+            <div class="photo-button" (click)="takePhoto()">
+                <div class="circle"></div>
+                <div class="ring"></div>
+            </div>
+            <canvas #canvas id="canvas"></canvas>
+        </div>
+        <div *ngIf="impossibletoverify">
+            <h2>Attenzione</h2>
+            <p>Non hai nessun dispositivo per scattare la foto, perciò non potrai essere verificato.</p>
+            <button (click)="fadeoutcam('access/login')" class="buttonnotverified">Continua</button>
+        </div>
+    </div>
+</div>

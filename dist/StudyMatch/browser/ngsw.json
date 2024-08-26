@@ -1,0 +1,107 @@
+{
+  "configVersion": 1,
+  "timestamp": 1724690169846,
+  "index": "/StudyMatch/access/login/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/StudyMatch/access/login/chunk-AVF2RFYO.js",
+        "/StudyMatch/access/login/chunk-RBUZSOFK.js",
+        "/StudyMatch/access/login/index.html",
+        "/StudyMatch/access/login/main-A744OQ5W.js",
+        "/StudyMatch/access/login/manifest.webmanifest",
+        "/StudyMatch/access/login/polyfills-SCHOHYNV.js",
+        "/StudyMatch/access/login/styles-V5I3LWVU.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/StudyMatch/access/login/assets/dislike-1.svg",
+        "/StudyMatch/access/login/assets/image.png",
+        "/StudyMatch/access/login/assets/like-1.svg",
+        "/StudyMatch/access/login/assets/mockup.svg",
+        "/StudyMatch/access/login/assets/school.png",
+        "/StudyMatch/access/login/icons/icon-128x128.png",
+        "/StudyMatch/access/login/icons/icon-144x144.png",
+        "/StudyMatch/access/login/icons/icon-152x152.png",
+        "/StudyMatch/access/login/icons/icon-192x192.png",
+        "/StudyMatch/access/login/icons/icon-384x384.png",
+        "/StudyMatch/access/login/icons/icon-512x512.png",
+        "/StudyMatch/access/login/icons/icon-512x5125.png",
+        "/StudyMatch/access/login/icons/icon-72x72.png",
+        "/StudyMatch/access/login/icons/icon-96x96.png",
+        "/StudyMatch/access/login/media/dislike-1-UFBJJ75A.svg",
+        "/StudyMatch/access/login/media/like-1-7JEYP2VZ.svg"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "offline",
+      "installMode": "lazy",
+      "updateMode": "lazy",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/StudyMatch/access/login/assets/dislike-1.svg": "5024e4b5e6cbb68ebd2efd3b01617b5dbba06f35",
+    "/StudyMatch/access/login/assets/image.png": "0966af250a091a526e79483ec8a819ca98cff07f",
+    "/StudyMatch/access/login/assets/like-1.svg": "1a6dae301ce656c39e13ea95ee8098953338627f",
+    "/StudyMatch/access/login/assets/mockup.svg": "87cae4149b72d9060dc5feadccad8230fe1a57a2",
+    "/StudyMatch/access/login/assets/school.png": "039b2f0c35f7e20822597e1970a4e506e2644b9b",
+    "/StudyMatch/access/login/chunk-AVF2RFYO.js": "c333a207cc1936caf9dba2fa29e87b6a798b5ab1",
+    "/StudyMatch/access/login/chunk-RBUZSOFK.js": "3da40d101c2d6f838975729a06b343d98ca0b2ed",
+    "/StudyMatch/access/login/icons/icon-128x128.png": "bb684badb31cb4cc0e9a28aba5a0e21c06b55956",
+    "/StudyMatch/access/login/icons/icon-144x144.png": "32c68a56f39bcb70d2553e30d5ea5467920081d3",
+    "/StudyMatch/access/login/icons/icon-152x152.png": "509f66f28f4986087123782a0782051f3fe5c606",
+    "/StudyMatch/access/login/icons/icon-192x192.png": "92fe381e5292654b868463e24c8d4f7149ea1b98",
+    "/StudyMatch/access/login/icons/icon-384x384.png": "f558dac0d4699b1f47600876be2daa84e5572a38",
+    "/StudyMatch/access/login/icons/icon-512x512.png": "f431487bd707a4725a978749fbcf4458120ce832",
+    "/StudyMatch/access/login/icons/icon-512x5125.png": "770d940fba93472f82fe01b58bf51f41177e5e8c",
+    "/StudyMatch/access/login/icons/icon-72x72.png": "8cff4dcfbb90213a92dd87b3953785f64dc347b3",
+    "/StudyMatch/access/login/icons/icon-96x96.png": "c5b0c293de5dccf6f4f5215dcaf62799dd5098b0",
+    "/StudyMatch/access/login/index.html": "551ae4e9a54e247392234ccb2e8dd40211501b55",
+    "/StudyMatch/access/login/main-A744OQ5W.js": "39ea8aee969a91b3964e49c4f9194463c2c10e9b",
+    "/StudyMatch/access/login/manifest.webmanifest": "fee75fd53e6b12414fd8d8c67b0491961eed797f",
+    "/StudyMatch/access/login/media/dislike-1-UFBJJ75A.svg": "5024e4b5e6cbb68ebd2efd3b01617b5dbba06f35",
+    "/StudyMatch/access/login/media/like-1-7JEYP2VZ.svg": "1a6dae301ce656c39e13ea95ee8098953338627f",
+    "/StudyMatch/access/login/polyfills-SCHOHYNV.js": "d45c76c5960bab3ace7fd6d211b9579456241f8a",
+    "/StudyMatch/access/login/styles-V5I3LWVU.css": "1c7951cc00fde7872f15c41caa78666b00ca98f9"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

@@ -1,0 +1,41 @@
+<div id="background" class="background fade-in">
+    <div class="correct-float fade-in-bubble" id="correct">
+        <h6>Successo</h6>
+        <p>{{message}}</p>                                                                                      
+    </div>
+    <div class="correct-float fade-in-bubble" id="correct-copy">
+        <h6>Contatto copiato</h6>
+        <p>Hai copiato il contatto; adesso lo puoi incollare.</p>                                                                                      
+    </div>
+    <div id="block" class="block fade-in-up">
+        <a class="return" (click)="fadeout('userswiper')"><i class="bi bi-arrow-left large-stroke" ></i>Torna indietro</a>
+        <div class="content">
+            <div class="search">
+                <form class="searchform">
+                    <span class="searchicon"><i class="bi bi-search"></i></span>
+                    <input type="text" placeholder="Cerca..." name="search" id="search-field">
+                </form>
+            </div>
+            <div class="profiles">
+                <ng-container *ngFor="let item of users">
+                    <div class="profile" *ngIf="item.id != user.id && (search == '' || item?.name?.toLowerCase().indexOf(search?.toLowerCase()) != -1 || item?.surname?.toLowerCase().indexOf(search?.toLowerCase()) != -1 || (item?.surname?.toLowerCase()+' '+item?.name?.toLowerCase()).indexOf(search?.toLowerCase()) != -1)">
+                        <img [src]="item.profileImageURL">
+                        <div class="information">
+                            <h3>{{item.surname}} {{item.name}}<i class="bi bi-patch-check-fill verify" *ngIf="item.verified"></i></h3>
+                            <p>{{item.age}}, {{item.city}}, {{item.faculty}}</p>
+                            <p>{{item.locationAndTime}}</p>
+                            <button (click)="sendrequest(item.id)" *ngIf="item.matched[user.id] == undefined && this.user.rejected.indexOf(item.id) == -1 && item.requests[user.id] == null" [id]="'button-'+item.id">Chiedi contatto</button>
+                            <div *ngIf="item.matched[user.id] != undefined && this.user.rejected.indexOf(item.id) == -1 && item.requests[user.id] == null" class="buttons">
+                                <a [href]="'https://www.instagram.com/'+item.instagram.substring(1)" target="_blank"><button class="firstButton">IG: {{item.instagram}}</button></a>
+                                <a (click)="copy(item.telegram)"><button>TG: {{item.telegram}}</button></a>
+                                <a (click)="copy(item.phone)"><button class="lastButton">{{item.phone}}</button></a>
+                            </div>
+                            <button *ngIf="this.user.rejected.indexOf(item.id) != -1 && item.requests[user.id] != null" disabled class="rejected" disabled>Rifiutato</button>
+                            <button *ngIf="item.requests[user.id] != null" class="already-requested" disabled>Richiesta già inviata</button>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
