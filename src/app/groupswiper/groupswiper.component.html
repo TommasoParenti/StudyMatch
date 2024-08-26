@@ -1,0 +1,38 @@
+<div class="overlay" id="overlay" *ngIf="isLoading">
+    <div class="spinner"></div>
+</div>  
+<app-navbar *ngIf="user!=undefined" [group]="true" [requestsnotify]="requestnotify" [messagesnotify]="messagenotify" [filterclicked] = "filterclicked" [user]="user" (reciveclick)="reciveclick($event)"/>
+<app-filter class="fade-in"></app-filter>
+<div class="cards">
+    <div *ngFor="let item of vectorGroups; let i = index">
+        <app-card-g class="middle-card" *ngIf="i === id && !this.accepted.includes[item.id] && !this.rejected.includes[item.id]" (accepted)="handleaccept()" (rejected)="handlereject()" [number]='id' [imagevector] ="vectorImage[id]"></app-card-g> 
+    </div>
+    <h4 *ngIf="id >= vectorGroups.length" class="end-match"><i class="bi bi-emoji-frown-fill"></i> I possibili gruppi sono finiti...</h4>
+    <div class="explore" *ngIf="!(id >= vectorGroups.length)">
+        <p>Esplora il gruppo</p>
+        <i class="bi bi-chevron-compact-down"></i>
+    </div>
+</div>
+<div class="profile-info" *ngIf="!(id >= vectorGroups.length)">
+    <div class="block" *ngIf="actualcard!=undefined">
+        <div class="left-column">
+            <h2>{{actualcard.name}}</h2>
+            <p><b>Età media</b>: {{actualcard.medium_age}}</p>
+            <p><b>Luogo e orari</b>: {{actualcard.locationAndTime}}</p>
+            <p class="descrizione">{{actualcard.description}}</p>
+            <div class="comune" *ngIf="comuneThings.length > 0">
+                <p class="small-text">In comune con te:</p>
+                <button *ngFor="let item of comuneThings">{{item}}</button>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="images">
+                <div *ngFor="let item of vectorImage[id]; let i = index;" class="image" [ngClass]="{'image-more': i == nummax, 'display-none': i >= nummax+1}">
+                    <img [src]="item">
+                    <p *ngIf="i == nummax">+{{vectorImage.length-nummax}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet/>

@@ -1,0 +1,290 @@
+@import url(../../../animations.css);
+
+.background {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    background-color: rgb(0,0,0,65%);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(7px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 330px
+}
+
+.block {
+    position: relative;
+    background-color: rgb(219,219,219,93%);
+    border-radius: 14px;
+    width: 25%;
+    min-width: 300px;
+    height: 60%;
+    padding: 1rem 0 2.5rem
+}
+
+.search {
+    margin-top: 1.5rem;
+    margin-bottom: .2rem;
+    width: 92%
+}
+
+.content,.searchform {
+    width: 100%;
+    display: flex
+}
+
+.searchform {
+    justify-content: center;
+    margin: 1.5rem 0 0
+}
+
+.content {
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center
+}
+
+.return,img {
+    position: absolute
+}
+
+.return {
+    top: 20px;
+    left: 20px
+}
+
+.bi-arrow-left {
+    margin-right: 10px
+}
+
+a,a:hover {
+    transition: .2s
+}
+
+a {
+    color: rgb(0,0,0,65%);
+    text-decoration: none;
+    font-weight: 350
+}
+
+a:hover {
+    color: #000;
+    cursor: pointer
+}
+
+button {
+    background-color: #007aff;
+    color: #fff;
+    border: 0;
+    width: auto;
+    padding: .5rem;
+    margin-top: .7rem;
+    margin-bottom: .7rem;
+    border-radius: 10px;
+    transition: .1s
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #0664c9;
+    transform: scale(1.02);
+    transition: .1s
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column
+}
+
+.buttons button {
+    width: 70%;
+    margin: .2rem 0
+}
+
+.buttons .firstButton {
+    margin-top: 1rem
+}
+
+.buttons .lastButton,h3 {
+    margin-bottom: .5rem
+}
+
+img {
+    top: 2rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 100%
+}
+
+.profiles {
+    width: 95%;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 1.7rem;
+    margin-left: .2rem;
+    justify-content: center
+}
+
+.profile {
+    position: relative;
+    background-color: rgba(255,255,255,.89);
+    border-radius: 8px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding-bottom: .8rem;
+    min-height: 200px
+}
+
+.information {
+    text-align: left;
+    width: 80%;
+    margin-left: 5.5rem
+}
+
+p {
+    font-size: .8rem;
+    margin: 0
+}
+
+input[type=text] {
+    height: 30px;
+    width: 70%;
+    margin: 0;
+    padding-left: .2rem;
+    border-radius: 0 8px 8px 0;
+    border: 0;
+    background-color: rgb(120,120,128,12%);
+    transition: .1s;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif
+}
+
+input[type=text]:focus {
+    outline: 0
+}
+
+.searchicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    font-size: .7rem;
+    background-color: rgb(120,120,128,12%);
+    color: rgb(120,120,128,90%);
+    transition: .3s;
+    margin: 0;
+    border-radius: 8px 0 0 8px;
+    padding-left: .3rem
+}
+
+.large-stroke {
+    -webkit-text-stroke: 1.1px
+}
+
+h6 {
+    color: #fff;
+    font-size: .9rem;
+    margin: 0
+}
+
+.correct-float p {
+    color: rgba(255,255,255,.781);
+    font-size: .8rem;
+    font-weight: 400;
+    margin: 0
+}
+
+.correct-float {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    width: 20rem;
+    height: 4rem;
+    background-color: rgba(0,141,12,.93);
+    box-shadow: 1px 10px 10px rgba(0,0,0,.178);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100
+}
+
+.verify {
+    margin-left: .5rem;
+    font-size: 1.1rem;
+    color: #007aff
+}
+
+.rejected {
+    background-color: #ce0303
+}
+
+.already-requested:hover,.rejected:hover {
+    background-color: #ce0303;
+    transform: none;
+    cursor: not-allowed
+}
+
+.already-requested,.already-requested:hover {
+    background-color: green
+}
+
+.fade-in {
+    animation: fadeIn ease-in .7s;
+    -webkit-animation: fadeIn ease-in .7s;
+    -moz-animation: fadeIn ease-in .7s;
+    -o-animation: fadeIn ease-in .7s;
+    -ms-animation: fadeIn ease-in .7s
+}
+
+.fade-in-up {
+    animation: fadeInUp ease-in .7s;
+    -webkit-animation: fadeInUp ease-in .7s;
+    -moz-animation: fadefadeInUpIn ease-in .7s;
+    -o-animation: fadeInUp ease-in .7s;
+    -ms-animation: fadeInUp ease-in .7s
+}
+
+.fade-out {
+    animation: fadeOut ease-in .5s;
+    -webkit-animation: fadeOut ease-in .5s;
+    -moz-animation: fadeOut ease-in .5s;
+    -o-animation: fadeOut ease-in .5s;
+    -ms-animation: fadeOut ease-in .5s
+}
+
+.fade-out-up {
+    animation: fadeOutUp ease-in .5s;
+    -webkit-animation: fadeOutUp ease-in .5s;
+    -moz-animation: fadeOutUp ease-in .5s;
+    -o-animation: fadeOutUp ease-in .5s;
+    -ms-animation: fadeOutUp ease-in .5s
+}
+
+.fade-in-bubble {
+    animation: fadeInBubble ease-in .5s;
+    -webkit-animation: fadeInBubble ease-in .5s;
+    -moz-animation: fadeInBubble ease-in .5s;
+    -o-animation: fadeInBubble ease-in .5s;
+    -ms-animation: fadeInBubble ease-in .5s
+}
+
+.fade-out-bubble {
+    animation: fadeOutBubble ease-in .5s;
+    -webkit-animation: fadeOutBubble ease-in .5s;
+    -moz-animation: fadeOutBubble ease-in .5s;
+    -o-animation: fadeOutBubble ease-in .5s;
+    -ms-animation: fadeOutBubble ease-in .5s
+}

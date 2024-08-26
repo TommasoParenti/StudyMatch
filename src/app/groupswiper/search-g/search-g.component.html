@@ -1,0 +1,35 @@
+<div id="background" class="background fade-in">
+    <div class="correct-float fade-in-bubble" id="correct">
+        <h6>Contatto richiesto</h6>
+        <p>Contatto richiesto correttamente</p>                                                                                      
+    </div>
+    <div id="block" class="block fade-in-up">
+        <a class="return" (click)="fadeout('groupswiper')"><i class="bi bi-arrow-left large-stroke" ></i>Torna indietro</a>
+        <div class="content">
+            <div class="search">
+                <form class="searchform">
+                    <span class="searchicon"><i class="bi bi-search"></i></span>
+                    <input type="text" placeholder="Cerca gruppo..." name="search" id="search-field">
+                </form>
+            </div>
+            <div class="profiles">
+                <ng-container *ngFor="let item of groups">
+                    <div class="profile" *ngIf="(search == '' || item?.name?.toLowerCase().indexOf(search?.toLowerCase()) != -1)">
+                        <div class="information">
+                            <h3>{{item.name}}</h3>
+                            <p>{{item.medium_age}}, {{item.locationAndTime}}</p>
+                            <button (click)="sendrequest(item.id)" *ngIf="item.members.indexOf(user.id) == -1 && user.rejected_groups.indexOf(item.id) == -1 && item.rejected.indexOf(user.id) == -1 && item.requests[user.id] == null" [id]="'button-'+item.id">Richiedi contatto</button>
+                            <div *ngIf="item.members.indexOf(user.id) != -1 && user.rejected_groups.indexOf(item.id) == -1 && item.rejected.indexOf(user.id) == -1 && item.requests[user.id] == null" class="buttons">
+                                <a [href]="item.telegram" target="_blank"><button class="firstButton">Telegram</button></a>
+                                <a [href]="'https://www.instagram.com/'+item.instagram.substring(1)" target="_blank"><button>{{item.instagram}}</button></a>
+                                <a [href]="item.phone" target="_blank"><button class="lastButton">Whatsapp</button></a>
+                            </div>
+                            <button *ngIf="user.rejected_groups.indexOf(item.id) != -1 || item.rejected.indexOf(user.id) != -1 && item.requests[user.id] == null" class="rejected">Rifiutato</button>
+                            <button *ngIf="item.requests[user.id] != undefined" class="already-requested" disabled>Richiesta già inviata</button>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

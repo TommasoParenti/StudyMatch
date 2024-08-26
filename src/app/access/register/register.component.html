@@ -1,0 +1,35 @@
+<div class="correct-float fade-in-bubble" id="correct">
+    <h6>Correttamente registrato</h6>
+    <p>{{message}}</p>
+</div>
+<div class="left-box fade-in">
+    <div>
+        <div class="error-float fade-in-bubble" id="error">
+            <h6>Errore</h6>
+            <p>{{message}}</p>
+        </div>
+        <div class="title">
+            <img [src]="imageurl">
+            <h1>StudyMatch</h1>
+        </div>
+        <h2>Registrati</h2>
+        <p>Effettua la registrazione</p>
+        <form id="form">
+            <input type="text" placeholder="Inserisci email... " id="email">
+            <input type="text" placeholder="Inserisci password..." id="password">
+            <div class="checkbox">
+                <input id="checkbox" type="checkbox" id="checkbox">
+                <label for="checkbox" class="small-text">Accetto i <b>termini di policy</b> della piattaforma</label>
+            </div>
+            <button type="button" class="larger-button" (click) = "signUpWithEmail()">Registrati</button>
+        </form>
+        <div class="middle-text"><p>Oppure</p></div>
+        <div class="buttons">
+            <button type="button" (click) = "signUpWithGoogle()"><i class="bi bi-google"></i></button>
+            <button type="button" (click) = "signUpWithFacebook()"><i class="bi bi-facebook"></i></button>
+            <button type="button" (click) = "signUpWithMicrosoft()"><i class="bi bi-microsoft"></i></button>
+        </div>
+        <a class="small-text already-account" routerLink="../login">Hai già un account?</a>
+    </div>
+</div>
+<router-outlet/>

@@ -1,0 +1,245 @@
+@import url(../../../animations.css);
+
+.topnav {
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    overflow-y: auto;
+}
+
+.left-column,.middle-column,.right-column,app-segmented-control {
+    display: flex;
+    align-items: center
+}
+
+.left-column {
+    justify-content: baseline;
+    flex-direction: row;
+    width: 34%;
+    padding-left: 1rem
+}
+
+.middle-column {
+    justify-content: center;
+    flex-direction: column;
+    width: 32%
+}
+
+.right-column {
+    justify-content: end;
+    flex-direction: row;
+    width: 34%;
+    padding-right: 1rem;
+    text-align: center
+}
+
+app-segmented-control {
+    justify-content: center;
+    width: 90%
+}
+
+img {
+    width: 4rem
+}
+
+.badge,.profile {
+    border-radius: 100%
+}
+
+.profile {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    margin: .2rem 0 0 1rem
+}
+
+i {
+    position: relative;
+    top: 0;
+    margin: 1rem;
+    color: #8d8d8d;
+    font-size: 1.1rem
+}
+
+a {
+    margin: .1rem
+}
+
+a:hover>i {
+    color: #3f3f3f
+}
+
+a:hover>i,i {
+    transition: .2s;
+    cursor: pointer;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #007aff;
+    width: auto;
+    min-width: 10px;
+    height: auto;
+    min-height: 10px;
+    padding: 3px 4px 3px 3px;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 5px #007aff
+}
+
+.large-stroke {
+    -webkit-text-stroke: 1.1px
+}
+
+.large-stroke-min {
+    -webkit-text-stroke: 1.03px
+}
+
+.icon {
+    display: none;
+    position: absolute;
+    top: 1.45rem;
+    left: .7rem;
+    font-size: 1.5rem;
+    z-index: 100
+}
+
+.displaynone {
+    display: none!important
+}
+
+.displayblock,.displaynotmobile {
+    display: block!important
+}
+
+label {
+    display: none
+}
+
+.display {
+    display: inherit!important
+}
+
+.fade-in-right {
+    animation: fadeInRight ease-in .5s;
+    -webkit-animation: fadeInRight ease-in .5s;
+    -moz-animation: fadeInRight ease-in .5s;
+    -o-animation: fadeInRight ease-in .5s;
+    -ms-animation: fadeInRight ease-in .5s
+}
+
+.fade-out-left {
+    animation: fadeOutLeft ease-in .5s;
+    -webkit-animation: fadeOutLeft ease-in .5s;
+    -moz-animation: fadeOutLeft ease-in .5s;
+    -o-animation: fadeOutLeft ease-in .5s;
+    -ms-animation: fadeOutLeft ease-in .5s
+}
+
+@media screen and (max-width:750px) {
+    .topnav.responsive .profile {
+        margin: 0;   
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .left-column,.right-column {
+        width: 25%
+    }
+
+    .middle-column {
+        width: 50%
+    }
+
+    .topnav {
+        margin: 0
+    }
+
+    .topnav.responsive .displaynotmobile,.topnav.responsive a {
+        display: block!important
+    }
+
+    .topnav a {
+        display: none
+    }
+
+    .displaynotmobile,.topnav.responsive .displayblock,app-segmented-control {
+        display: none!important
+    }
+
+    a.icon {
+        display: block
+    }
+
+    .bi-list,.topnav.responsive i {
+        font-size: 1.4rem
+    }
+
+    .topnav.responsive .displaynone,.topnav.responsive label {
+        display: block;
+        color: #464646;
+        margin-top: -4vh
+    }
+
+    .topnav.responsive {
+        backdrop-filter: blur(7px);
+        background-color: #dbdbdbd0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column
+    }
+
+    .topnav.responsive .left-column {
+        margin-top: auto
+    }
+
+    .right-column {
+        padding: 1.3rem
+    }
+
+    .topnav.responsive .right-column {
+        margin-bottom: auto;
+        padding: 1rem
+    }
+
+    .topnav.responsive .left-column,.topnav.responsive .right-column {
+        flex-direction: column;
+        padding: 0;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    .topnav.responsive a {
+        margin: 5vh
+    }
+
+    .bi-chat-dots-fill,.bi-patch-plus-fill,.bi-pencil-fill,.bi-send-fill,.icon {
+        margin: 0
+    }
+
+    .topnav.responsive .middle-column,.topnav.responsive app-segmented-control {
+        display: block!important;
+        margin: 0 auto;
+        width: 80%
+    }
+
+    .icon:hover>i {
+        color: #707070
+    }
+
+    a:hover>i {
+        color: #525252
+    }
+
+    h1 {
+        margin-top: 2.5rem;
+        color: #000
+    }
+}

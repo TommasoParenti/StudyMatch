@@ -1,0 +1,32 @@
+<div id="background" class="background fade-in">
+    <div class="correct-float fade-in-bubble" id="correct-copy">
+        <h6>Contatto copiato</h6>
+        <p>Hai copiato il contatto; adesso lo puoi incollare.</p>                                                                                      
+    </div>
+    <div id="block" class="block fade-in-up">
+        <a class="return" (click)="fadeout('groupswiper')"><i class="bi bi-arrow-left large-stroke" ></i>Torna indietro</a>
+        <div class="content">
+            <div class="text">
+                <h2>Messaggi gruppi</h2>
+                <p>Visualizza in questa sezione tutti i gruppi che hai creato o che ti hanno accettato la richiesta. Tramite i loro social puoi contattarli!</p>
+            </div>
+            <div class="profiles fade-in" *ngIf="accepted != undefined && members != undefined">
+                <ng-container *ngFor="let item of accepted; let i = index">
+                    <div class="profile">
+                        <div class="information">
+                            <h3>{{item.name}}</h3>
+                            <p><b>Età media</b>: {{item.medium_age}}</p>
+                            <p><b>Luogo e orario</b>: {{item.locationAndTime}}</p>
+                            <p class="people">{{members[i]}}</p>
+                            <p class="descrizione">{{item.description}}</p>
+                            <a [href]="item.telegram" target="_blank"><button class="firstButton">Telegram</button></a>
+                            <a [href]="'https://www.instagram.com/'+item.instagram.substring(1)" target="_blank"><button>{{item.instagram}}</button></a>
+                            <a [href]="item.phone" target="_blank"><button class="lastButton">Whatsapp</button></a>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <h4 *ngIf="accepted.length <= 0" class="end-messages">Nessuna gruppo...</h4>
+        </div>
+    </div>
+</div>

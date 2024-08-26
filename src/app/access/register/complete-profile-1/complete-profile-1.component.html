@@ -1,0 +1,40 @@
+<div id="background" class="background fade-in">
+    <div class="error-float fade-in-bubble" id="error-cmplt-1">
+        <h6>Errore</h6>
+        <p>{{message}}</p>
+    </div>
+    <div id="block" class="block fade-in-up">
+        <a class="return" (click)="fadeout('access/register')"><i class="bi bi-arrow-left large-stroke" ></i>Torna indietro</a>
+        <form id="form">
+            <div class="text">
+                <h2>Completa il profilo</h2>
+                <p>Per completare il profilo fornisci alcune informazioni che permetteranno di farti conoscere brevemente gli altri studenti</p>
+            </div>
+            <div class="inputs">
+                <div class="left-column">
+                    <div>
+                        <input type="text" placeholder="Nome" id="nome">
+                        <input type="text" placeholder="Cognome" id="cognome">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Età" id="eta">
+                        <input type="text" placeholder="Luogo e fascia oraria" id="lfo">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Città" id="citta">
+                        <input type="text" placeholder="Facoltà" id="facolta">
+                    </div>
+                    <div>
+                        <textarea placeholder="Descrizione (Max 200 caratteri)" id="descrizione" maxlength="200"></textarea>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <img id="output"/>
+                    <input id="selectfile" type="file" accept="image/*" (change)="loadFile($event)">
+                    <label for="selectfile">Seleziona immagine profilo</label>
+                </div>
+            </div>
+            <button type="button" class="larger-button" (click)="fadeoutsv('access/register/end-complete-profile')">Registrati</button>
+        </form>
+    </div>
+</div>

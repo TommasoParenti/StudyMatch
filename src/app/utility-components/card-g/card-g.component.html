@@ -1,0 +1,8 @@
+<div class="card prevent-select fade-in" [id]="'card-'+number">
+    <div class="images">
+        <div *ngFor="let item of imagevector; let i = index;" class="image" [id]="'img-'+i" [ngClass]="{'image-more': i == 5, 'display-none': i >= 6}">
+            <img [src]="item" id="img">
+            <p *ngIf="i == 5">+{{imagevector.length-5}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div *ngIf="user!=undefined" class="profile">
+    <div class="left-column">
+        <img [src]="user.profileImageURL" class="fade-in">
+    </div>
+    <div class="right-column">
+        <h2>{{user.surname}} {{user.name}}<i class="bi bi-patch-check-fill verify" *ngIf="user.verified"></i></h2>
+        <p><b>Informazioni</b>: {{user.age}}, {{user.city}}, {{user.faculty}}</p>
+        <p><b>Luogo e orario</b>: {{user.locationAndTime}}</p>
+        <p class="descrizione">{{user.description}}</p>
+        <div>
+            <button>{{user.instagram}}</button>
+            <button>{{user.telegram}}</button>
+            <button>{{user.phone}}</button>
+        </div>
+    </div>
+</div>

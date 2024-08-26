@@ -1,0 +1,32 @@
+<div id="block" class="block">
+    <div class="content">
+        <h3>Informazioni scolastiche</h3>
+        <div class="time">
+            <p>Dalle</p>
+            <input type="time" id="time-1" value="{{timevalue_1}}"/>
+            <p>alle</p>
+            <input type="time" id="time-2" value="{{timevalue_2}}"/>
+        </div>
+        <div #location id="location" class="searchbox" (click)="outline()">
+            <span type="submit" class="searchboxicon"><i class="bi bi-geo-alt-fill"></i></span>
+            <input type="text" placeholder="Luogo di frequentazione" id="locationsearch" name="search"  value="{{locationvalue}}">
+        </div>
+        <div #city id="city" class="searchbox" (click)="outlinec()" *ngIf="!group">
+            <span type="submit" class="searchboxicon"><i class="bi bi-building-fill"></i></span>
+            <input type="text" placeholder="Città" id="citysearch" name="search" value="{{cityvalue}}">
+        </div>
+        <div #faculty id="faculty" class="searchbox" (click)="outlinef()" *ngIf="!group">
+            <span type="submit" class="searchboxicon"><i class="bi bi-backpack-fill"></i></span>
+            <input type="text" placeholder="Facoltà" id="facultysearch" name="search" value="{{facultyvalue}}">
+        </div>
+        <h3 class="margin-top">Età</h3>
+        <div class="age">
+            <label for="age">18</label>
+            <input id="age" type="range" min="18" max="99" value="{{agevalue}}" (pointermove)="captureMouseEvent($event)" (change)="floatlabel($event)"/>
+            <label for="age">99</label>
+            <label id="float-bubble" for="age" class="float-bubble fade-in">{{agevalue}}</label>
+        </div>
+        <button (click)="filter()">Filtra</button>
+        <button (click)="reset()">Reset</button>
+    </div>
+</div>

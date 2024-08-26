@@ -1,0 +1,70 @@
+.segmented-controls {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s ease;
+    border-radius: .5rem;
+    height: 1.5rem;
+    width: 100%;
+    padding: .125rem
+}
+
+.segmented-controls input {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    white-space: nowrap
+}
+
+.segmented-controls label {
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    flex: 1 1 0px;
+    position: relative;
+    z-index: 2;
+    transition: inherit;
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #000
+}
+
+.segmented-controls label:last-of-type {
+    z-index: 1
+}
+
+.segmented-controls label:last-of-type::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+    background-color: #000;
+    transition: inherit;
+    background: #fff;
+    border-radius: .4275rem;
+    border: .5px solid rgba(0,0,0,.04);
+    box-shadow: 0 3px 1px rgba(0,0,0,.04),0 3px 8px rgba(0,0,0,.12)
+}
+
+.segmented-controls input:checked+label {
+    font-weight: 600;
+    color: #000
+}
+
+.move-right::after {
+    transform: translateX(0)
+}
+
+.move-left::after {
+    transform: translateX(-100%)
+}

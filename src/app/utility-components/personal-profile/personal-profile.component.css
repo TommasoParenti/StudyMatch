@@ -1,0 +1,216 @@
+@import url(../../../animations.css);
+
+.background {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    background-color: rgb(0,0,0,61%);
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(7px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-width: 310px
+}
+
+.block {
+    min-width: 310px;
+    position: relative;
+    background-color: rgb(219,219,219,91%);
+    border-radius: 14px;
+    width: 51%;
+    height: 65%;
+    padding: 1rem 0
+}
+
+.content {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1.5rem
+}
+
+.return {
+    position: absolute;
+    top: 20px;
+    left: 20px
+}
+
+.bi-arrow-left {
+    margin-right: 10px
+}
+
+a,a:hover {
+    transition: .2s
+}
+
+a {
+    color: rgb(0,0,0,61%);
+    text-decoration: none;
+    font-weight: 350
+}
+
+a:hover {
+    color: #000;
+    cursor: pointer
+}
+
+.mySlides {
+    display: none;
+    height: 100%
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 88%;
+    margin: auto
+}
+
+.dots {
+    text-align: center
+}
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color .6s ease
+}
+
+.next,.prev {
+    display: none;
+    position: absolute;
+    font-size: 1.3rem
+}
+
+.prev {
+    left: 1rem
+}
+
+.next {
+    right: 1rem
+}
+
+.large-stroke {
+    -webkit-text-stroke: 1.1px
+}
+
+.dot:hover {
+    background-color: #444
+}
+
+.active {
+    background-color: #717171
+}
+
+app-profile,app-qr-code {
+    display: block;
+    height: 100%
+}
+
+.buttons {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 10%
+}
+
+.fade-in {
+    animation: fadeIn ease-in .7s;
+    -webkit-animation: fadeIn ease-in .7s;
+    -moz-animation: fadeIn ease-in .7s;
+    -o-animation: fadeIn ease-in .7s;
+    -ms-animation: fadeIn ease-in .7s
+}
+
+.fade-in-up {
+    animation: fadeInUp ease-in .7s;
+    -webkit-animation: fadeInUp ease-in .7s;
+    -moz-animation: fadefadeInUpIn ease-in .7s;
+    -o-animation: fadeInUp ease-in .7s;
+    -ms-animation: fadeInUp ease-in .7s
+}
+
+.fade-out {
+    animation: fadeOut ease-in .5s;
+    -webkit-animation: fadeOut ease-in .5s;
+    -moz-animation: fadeOut ease-in .5s;
+    -o-animation: fadeOut ease-in .5s;
+    -ms-animation: fadeOut ease-in .5s
+}
+
+.fade-out-up {
+    animation: fadeOutUp ease-in .5s;
+    -webkit-animation: fadeOutUp ease-in .5s;
+    -moz-animation: fadeOutUp ease-in .5s;
+    -o-animation: fadeOutUp ease-in .5s;
+    -ms-animation: fadeOutUp ease-in .5s
+}
+
+.fade-in-right {
+    animation: fadeInRight ease-in .5s;
+    -webkit-animation: fadeInRight ease-in .5s;
+    -moz-animation: fadeInRight ease-in .5s;
+    -o-animation: fadeInRight ease-in .5s;
+    -ms-animation: fadeInRight ease-in .5s
+}
+
+.fade-in-left {
+    animation: fadeInLeft ease-in .5s;
+    -webkit-animation: fadeInLeft ease-in .5s;
+    -moz-animation: fadeInLeft ease-in .5s;
+    -o-animation: fadeInLeft ease-in .5s;
+    -ms-animation: fadeInLeft ease-in .5s
+}
+
+.fade-out-right {
+    animation: fadeOutRight ease-in .5s;
+    -webkit-animation: fadeOutRight ease-in .5s;
+    -moz-animation: fadeOutRight ease-in .5s;
+    -o-animation: fadeOutRight ease-in .5s;
+    -ms-animation: fadeOutRight ease-in .5s
+}
+
+.fade-out-left {
+    animation: fadeOutLeft ease-in .5s;
+    -webkit-animation: fadeOutLeft ease-in .5s;
+    -moz-animation: fadeOutLeft ease-in .5s;
+    -o-animation: fadeOutLeft ease-in .5s;
+    -ms-animation: fadeOutLeft ease-in .5s
+}
+
+@media all and (min-width:1620px) and (max-width:1910px) {
+    .block {
+        width: 61%
+    }
+}
+
+@media all and (min-width:1320px) and (max-width:1620px) {
+    .block {
+        width: 60%
+    }
+}
+
+@media all and (min-width:900px) and (max-width:1320px) {
+    .block {
+        width: 70%
+    }
+}
+
+@media screen and (max-width:750px) {
+    .next,.prev {
+        display: inline
+    }
+}

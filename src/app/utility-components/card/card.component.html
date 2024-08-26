@@ -1,0 +1,5 @@
+<div class="card prevent-select fade-in" [id]="'card-'+number" [ngStyle]="{'background-image': 'url(' + user.profileImageURL + ')'}">
+    <div class="bottom">
+        <p><b>{{user.surname}} {{user.name}}</b>, {{user.age}} <i class="bi bi-patch-check-fill verify" *ngIf="user.verified"></i></p>
+    </div>
+</div>

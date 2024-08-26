@@ -1,0 +1,282 @@
+@import url(../../animations.css);
+
+.left-box,.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+}
+
+.left-box {
+    position: absolute;
+    left: 3vh;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100vh;
+    width: 30%;
+    margin: auto;
+    border-radius: 19px;
+    flex-direction: column
+}
+
+.title {
+    flex-direction: row;
+    width: 100%
+}
+
+form {
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: auto;
+}
+
+h1,h2 {
+    margin: 0
+}
+
+h1 {
+    width: fit-content;
+    font-size: 3rem;
+    font-weight: 750
+}
+
+h2 {
+    font-weight: 450
+}
+
+p {
+    margin: .9vh 0 1.5vh;
+    font-size: 1rem;
+    font-weight: 400
+}
+
+.small-text {
+    font-size: .7rem
+}
+
+.password-reset {
+    position: relative;
+    bottom: 0
+}
+
+input[type=text] {
+    height: 35px;
+    width: 290px;
+    margin: .3rem;
+    padding-left: .7rem;
+    border-radius: 8px;
+    border: solid 1px #d9d9d9;
+    transition: .1s;
+    font-size: .8rem;
+    font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif
+}
+
+input[type=text]:focus {
+    outline: solid 1px #007aff;
+    transform: scale(1.02);
+    transition: .1s
+}
+
+input[type=checkbox]:hover {
+    cursor: pointer;
+}
+
+
+button {
+    background-color: #007aff;
+    color: #fff;
+    border-radius: 19px;
+    border: 0;
+    width: 55px;
+    height: 55px;
+    margin: .6rem;
+    transition: .1s
+}
+
+.larger-button {
+    width: 300px;
+    height: 42px;
+    border-radius: 40px;
+    margin-top: 1.2rem;
+    font-size: .85rem
+}
+
+button:hover {
+    background-color: #0664c9;
+    cursor: pointer;
+    transition: .1s
+}
+
+.checkbox {
+    margin-top: .5rem;
+    margin-bottom: .6rem
+}
+
+i {
+    font-size: 1rem;
+    margin: 0
+}
+
+img {
+    width: 6rem;
+    height: auto;
+    margin-right: .3rem
+}
+
+a,a:hover {
+    transition: .2s
+}
+
+a {
+    font-weight: 400;
+    color: #3d3d3d;
+    font-size: .7rem
+}
+
+a:hover {
+    color: #007aff
+}
+
+.middle-text {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #a1a1a1;
+    margin: 1rem auto
+}
+
+.middle-text::after,.middle-text::before {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #a1a1a1
+}
+
+.middle-text:not(:empty)::before {
+    margin-right: .25em
+}
+
+.middle-text:not(:empty)::after {
+    margin-left: .25em
+}
+
+.already-account,.missing-account {
+    display: none;
+    margin-top: 1rem;
+    text-decoration: none
+}
+
+.error-float {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    z-index: 100;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    width: 14rem;
+    height: 4rem;
+    background-color: rgba(250, 121, 121, 0.93);
+    box-shadow: 1px 10px 10px rgba(196, 59, 59, 0.247);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h6 {
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.error-float p, .correct-float p {
+    color: rgba(255, 255, 255, 0.781);
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.correct-float {
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    z-index: 100;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    width: 20rem;
+    height: 4rem;
+    background-color: rgba(0, 141, 12, 0.93);
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.137);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.fade-in {
+    animation: fadeInFifty ease-in .5s;
+    -webkit-animation: fadeInFifty ease-in .5s;
+    -moz-animation: fadeInFifty ease-in .5s;
+    -o-animation: fadeInFifty ease-in .5s;
+    -ms-animation: fadeInFifty ease-in .5s
+}
+
+.fade-in-bubble {
+    animation: fadeInBubble ease-in .5s;
+    -webkit-animation: fadeInBubble ease-in .5s;
+    -moz-animation: fadeInBubble ease-in .5s;
+    -o-animation: fadeInBubble ease-in .5s;
+    -ms-animation: fadeInBubble ease-in .5s
+}
+
+.fade-out-bubble {
+    animation: fadeOutBubble ease-in .5s;
+    -webkit-animation: fadeOutBubble ease-in .5s;
+    -moz-animation: fadeOutBubble ease-in .5s;
+    -o-animation: fadeOutBubble ease-in .5s;
+    -ms-animation: fadeOutBubble ease-in .5s
+}
+
+@media all and (max-width:1070px) {
+    .already-account,.missing-account {
+        display: block
+    }
+}
+
+@media all and (min-width:768px) and (max-width:1070px) {
+    .left-box {
+        width: 100%;
+        left: 0;
+        padding: 0
+    }
+
+    form {
+        width: 50%
+    }
+}
+
+@media all and (min-width:480px) and (max-width:768px) {
+    .left-box {
+        width: 100%;
+        left: 0;
+        padding: 0
+    }
+
+    form {
+        width: 70%
+    }
+}
+
+@media all and (max-width:480px) {
+    .left-box {
+        width: 100%;
+        left: 0;
+        padding: 0
+    }
+
+    form {
+        width: 87%
+    }
+}

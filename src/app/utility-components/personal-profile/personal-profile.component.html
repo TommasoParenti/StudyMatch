@@ -1,0 +1,23 @@
+<div id="background" class="background fade-in">
+    <div id="block" class="block fade-in-up">
+        <a class="return" (click)="fadeout(to)"><i class="bi bi-arrow-left large-stroke" ></i>Torna indietro</a>
+        <div class="content">
+            <div class="slideshow-container">
+                <div name="profile" class="mySlides">
+                  <app-profile id="profile" class="fade-in-left" [user]="user"/>
+                </div>
+                <div name="qr" class="mySlides">
+                    <app-qr-code id="qrcode" class="fade-in-right" [name]="this.id"/>
+                </div>  
+            </div>
+            <div class="buttons">
+                <a class="prev" (click)="plusSlides(-1)"><i class="bi bi-chevron-left large-stroke"></i></a>
+                <a class="next" (click)="plusSlides(1)"><i class="bi bi-chevron-right large-stroke"></i></a>
+            </div>             
+            <div class="dots">
+                <span class="dot" (click)="currentSlide(1)"></span> 
+                <span class="dot" (click)="currentSlide(2)"></span> 
+              </div>
+        </div>
+    </div>
+</div>
