@@ -50,7 +50,7 @@ export class CompleteProfile1Component implements OnInit{
     try {
       this.downloadURL = await this.storageService.uploadProfileImage(file);
     } catch (error) {
-      error.message = "Immagina non caricata correttamente."
+      error.message = "Immagine non caricata correttamente."
       throw error;
     }
   }
@@ -92,7 +92,6 @@ export class CompleteProfile1Component implements OnInit{
     const description = (document.getElementById("descrizione") as HTMLInputElement).value;
     const city = (document.getElementById("citta") as HTMLInputElement).value;
     const faculty = (document.getElementById("facolta") as HTMLInputElement).value;
-
     if (!name || !surname || !age || !locationtime || !description || !faculty || !city) {
       throw new Error("Qualche campo è vuoto.");
     }
@@ -109,18 +108,13 @@ export class CompleteProfile1Component implements OnInit{
     } else if (!/^[\s\S]+, \d\d-\d\d$/.test(locationtime)) {
       throw new Error("Il luogo e l'orario devono essere nella forma: luogo, ora-ora.");
     }
-
     const [firstHour, secondHour] = locationtime.split(",")[1].split("-").map(Number);
     if (firstHour < 0 || firstHour >= 24 || secondHour < 0 || secondHour > 24) {
       throw new Error("La fascia oraria non è valida (supera le 23 o va a meno di 00)");
     } else if(this.file == undefined) {
       throw new Error("Devi caricare un'immagine profilo.");
-    } else if(this.cities.indexOf(city.toLowerCase()) == -1){
-      throw new Error("Città inesistente o non valida.");
     }
-
     await this.onFileSelected(this.file);
-
     const user: any = await firstValueFrom(this.authService.getUser());
     await this.db.updateItem("user", user.uid, {
       id: user.uid,

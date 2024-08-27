@@ -23,7 +23,7 @@
     background-color: rgb(219,219,219,91%);
     border-radius: 14px;
     width: 51%;
-    height: 65%;
+    height: 70%;
     padding: 1rem 0
 }
 
@@ -212,5 +212,24 @@ app-profile,app-qr-code {
 @media screen and (max-width:750px) {
     .next,.prev {
         display: inline
+    }
+}
+
+@media all and (min-width:480px) and (max-width:900px) {
+    .block {
+        width: 70%;
+    }
+    
+}
+
+@media all and (max-width:480px) {
+    .block {
+        width: 70%;
+    }
+}
+
+@media all and (max-height:650px) {
+    .block {
+        height: 85%;
     }
 }

@@ -218,7 +218,8 @@ h6 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 100
+    z-index: 100;
+    padding: 0.5rem;
 }
 
 .verify {
@@ -287,4 +288,16 @@ h6 {
     -moz-animation: fadeOutBubble ease-in .5s;
     -o-animation: fadeOutBubble ease-in .5s;
     -ms-animation: fadeOutBubble ease-in .5s
+}
+
+@media all and (min-width:480px) and (max-width:768px) {
+    .correct-float {
+        top: 4rem;
+    }
+}
+
+@media all and (max-width:480px) {
+    .correct-float {
+        top: 4rem;
+    }
 }

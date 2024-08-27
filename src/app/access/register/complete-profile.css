@@ -41,8 +41,9 @@ form {
 }
 
 .inputs {
-    width: 75%;
+    width: 100%;
     display: flex;
+    justify-content: center;
     flex-direction: row
 }
 
@@ -92,9 +93,9 @@ input[type=file]+label,input[type=text],textarea {
 
 input[type=text],textarea {
     height: 35px;
-    width: 290px;
+    width: 45%;
     margin: .2rem;
-    padding-left: .2rem;
+    padding-left: .4rem;
     border-radius: 8px;
     border: solid 1px #d9d9d9;
     transition: .1s;
@@ -139,7 +140,7 @@ input[type=file]:focus+label,input[type=file]:hover+label,input[type=text]:focus
 }
 
 #descrizione {
-    width: 92%;
+    width: 93%;
     height: 5rem;
     resize: none
 }
@@ -178,7 +179,6 @@ button:hover {
 
 #output {
     margin: 1rem auto;
-    display: none;
     width: 60%;
     box-shadow: 2px 3px 10px #888
 }
@@ -195,7 +195,8 @@ button:hover {
     height: 4rem;
     background-color: rgba(250,121,121,.93);
     box-shadow: 1px 10px 10px rgba(196,59,59,.247);
-    flex-direction: column
+    flex-direction: column;
+    padding: .5rem
 }
 
 h6 {
@@ -245,10 +246,58 @@ video {
 }
 
 .photo-button {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     margin-top: 1rem;
     position: relative
+}
+
+#canvas,#output {
+    display: none
+}
+
+.buttonnotverified {
+    margin-top: 2rem
+}
+
+.circle,.ring {
+    position: absolute;
+    border-radius: 100%
+}
+
+.circle {
+    top: 12%;
+    left: 12%;
+    bottom: 12%;
+    right: 12%;
+    background-color: #fff;
+    opacity: 0
+}
+
+.ring {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: .5em solid #fff;
+    opacity: .8
+}
+
+.photo-button .circle,.photo-button .ring {
+    transition: all .25s
+}
+
+.photo-button:hover .circle {
+    opacity: 1;
+    cursor: pointer
+}
+
+.photo-button:active .ring {
+    opacity: 1
+}
+
+.photo-button:active .circle {
+    opacity: .5
 }
 
 .fade-in {
@@ -281,4 +330,96 @@ video {
     -moz-animation: fadeOutBubble ease-in .5s;
     -o-animation: fadeOutBubble ease-in .5s;
     -ms-animation: fadeOutBubble ease-in .5s
+}
+
+@media all and (min-width:768px) and (max-width:1024px) {
+    .inputs {
+        flex-direction: column;
+        width: 95%
+    }
+
+    h2 {
+        margin-top: 3rem
+    }
+
+    .left-column,.right-column {
+        margin: 0;
+        width: 100%
+    }
+}
+
+@media all and (min-width:480px) and (max-width:768px) {
+    .inputs {
+        flex-direction: column;
+        width: 95%
+    }
+
+    input[type=text],textarea {
+        width: 90%;
+    }
+
+    .larger-button {
+        margin-top: 1rem
+    }
+
+    button,i,input[type=text],label,p,textarea {
+        font-size: 1.1rem!important
+    }
+
+    .error-float {
+        top: 4rem
+    }
+
+    h2 {
+        margin-top: 3rem
+    }
+
+    .left-column,.right-column {
+        margin: 0;
+        width: 100%
+    }
+}
+
+@media all and (max-width:480px) {
+    .inputs {
+        flex-direction: column;
+        width: 95%
+    }
+
+    input[type=text],textarea {
+        width: 90%;
+    }
+
+    .larger-button {
+        margin-top: 1rem
+    }
+
+    button,i,input[type=text],label,p,textarea {
+        font-size: 1.1rem!important
+    }
+
+    .error-float {
+        top: 4rem
+    }
+
+    h2 {
+        margin-top: 3rem
+    }
+
+    .left-column,.right-column {
+        margin: 0;
+        width: 100%
+    }
+}
+
+@media all and (max-height:500px) {
+    .background {
+        justify-content: flex-start
+    }
+}
+
+@media all and (max-height:750px) {
+    .background-opened {
+        justify-content: flex-start!important
+    }
 }

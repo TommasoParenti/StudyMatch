@@ -25,7 +25,7 @@
 <div class="profile-info" *ngIf="!(id >= vectorUsers.length)">
     <div class="block" *ngIf="actualcard!=undefined">
         <div class="left-column">
-            <h2>{{actualcard.surname}} {{actualcard.name}}<i class="bi bi-patch-check-fill verify" *ngIf="actualcard.verify"></i></h2>
+            <h2>{{actualcard.surname}} {{actualcard.name}}<i class="bi bi-patch-check-fill verify" *ngIf="actualcard.verified"></i></h2>
             <p><b>Informazioni</b>: {{actualcard.age}}, {{actualcard.city}}, {{actualcard.faculty}}</p>
             <p><b>Luogo e orario</b>: {{actualcard.locationAndTime}}</p>
             <p class="descrizione">{{actualcard.description}}</p>

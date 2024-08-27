@@ -122,6 +122,7 @@ export class UserswiperComponent implements OnInit{
   }
 
   private findComuneThings() {
+    this.comuneThings = [];
     if(this.actualcard != undefined && this.user != undefined) {
       var location_actual = this.actualcard.locationAndTime.split(",")[0].trim().toLowerCase().replace(/\s+/g, "");
       var time_actual = this.actualcard.locationAndTime.split(",")[1].trim().toLowerCase().replace(/\s+/g, "");

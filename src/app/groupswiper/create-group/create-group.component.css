@@ -185,7 +185,8 @@ button:hover {
     box-shadow: 1px 10px 10px rgba(196,59,59,.247);
     justify-content: center;
     align-items: center;
-    flex-direction: column
+    flex-direction: column;
+    padding: 0.5rem;
 }
 
 h6 {
@@ -230,6 +231,10 @@ h6 {
         margin-top: 1.5rem
     }
 
+    button,i,input[type=text],label,p,textarea {
+        font-size: 1.1rem!important
+    }
+
     .column {
         margin: 0;
         width: 100%
@@ -246,6 +251,14 @@ h6 {
         margin-top: 1.5rem
     }
 
+    .error-float, .correct-float {
+        top: 4rem;
+    }
+
+    button,i,input[type=text],label,p,textarea {
+        font-size: 1.1rem!important
+    }
+
     .column {
         margin: 0;
         width: 100%
@@ -260,6 +273,14 @@ h6 {
 
     h2 {
         margin-top: 1.5rem
+    }
+
+    .error-float, .correct-float {
+        top: 4rem;
+    }
+
+    button,i,input[type=text],label,p,textarea {
+        font-size: 1.1rem!important
     }
 
     .column {
