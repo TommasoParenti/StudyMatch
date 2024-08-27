@@ -17,6 +17,7 @@ import { SearchGComponent } from './groupswiper/search-g/search-g.component';
 import { CreateGroupComponent } from './groupswiper/create-group/create-group.component';
 import { loginGuard } from './_guard/login.guard';
 import { registerGuard } from './_guard/register.guard';
+import { OfflineComponent } from './offline/offline.component';
 
 const routes: Routes = [
   {
@@ -111,6 +112,10 @@ const routes: Routes = [
         redirectTo: "/login"
       }
     ]
+  },
+  {
+    path:"offline",
+    component: OfflineComponent
   },
   {
     path: '**', 

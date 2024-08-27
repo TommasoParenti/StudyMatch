@@ -78,6 +78,7 @@ export class AuthService {
       }
       const data: any = await firstValueFrom(this.firestore.collection("user").doc(usercr.user.uid).valueChanges());
       if (!data?.completed) {
+        this.login.register();
         throw new Error('Prima devi completare il profilo.');
       } else {
         this.login.login();
@@ -99,6 +100,7 @@ export class AuthService {
       }
       const data: any = await firstValueFrom(this.firestore.collection("user").doc(usercr.user.uid).valueChanges());
       if (!data?.completed) {
+        this.login.register();
         throw new Error('Prima devi completare il profilo.');
       } else {
         this.login.login();
@@ -120,6 +122,8 @@ export class AuthService {
       }
       const data: any = await firstValueFrom(this.firestore.collection("user").doc(usercr.user.uid).valueChanges());
       if (!data?.completed) {
+        
+        this.login.register();
         throw new Error('Prima devi completare il profilo.');
       } else {
         this.login.login();
@@ -133,14 +137,13 @@ export class AuthService {
     try {
       const provider = new firebase.auth.GithubAuthProvider();
       const usercr = await this.afAuth.signInWithPopup(provider);
-      if (!usercr.user?.emailVerified) {
-        throw new Error('Per favore verifica la tua email per accedere.');
-      } else if (usercr.additionalUserInfo.isNewUser) {
+      if (usercr.additionalUserInfo.isNewUser) {
         await usercr.user.delete();
         throw new Error('Prima devi registrarti.');
       }
       const data: any = await firstValueFrom(this.firestore.collection("user").doc(usercr.user.uid).valueChanges());
       if (!data?.completed) {
+        this.login.register();
         throw new Error('Prima devi completare il profilo.');
       } else {
         this.login.login();

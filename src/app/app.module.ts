@@ -18,13 +18,15 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthService } from './_services/authentication.service';
 import { DbService } from './_services/db.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { OfflineComponent } from './offline/offline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccessComponent,
     UserswiperComponent,
-    GroupswiperComponent
+    GroupswiperComponent,
+    OfflineComponent
   ],
   imports: [
     BrowserModule,
@@ -38,13 +40,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AngularFireAuthModule,
     AngularFireStorageModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
+      enabled: true,
       registrationStrategy: 'registerWhenStable:30000'
-    }),
-    ServiceWorkerModule.register('service-worker-custom.js', {
-      enabled: !isDevMode(),
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
+    })
   ],
   providers: [
     AuthService, 
@@ -52,4 +50,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor() {
+  }
+}

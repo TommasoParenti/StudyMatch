@@ -8,7 +8,6 @@
       "resources": {
         "files": [
           "/index.html",
-          "/offline.html",
           "/manifest.webmanifest",
           "/*.css",
           "/*.js"
