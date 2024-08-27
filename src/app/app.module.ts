@@ -41,10 +41,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    ServiceWorkerModule.register('ngsw-worker.js', {
+    ServiceWorkerModule.register('service-worker-custom.js', {
       enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
   ],

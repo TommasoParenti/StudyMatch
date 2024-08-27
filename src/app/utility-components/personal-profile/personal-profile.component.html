@@ -7,7 +7,7 @@
                   <app-profile id="profile" class="fade-in-left" [user]="user"/>
                 </div>
                 <div name="qr" class="mySlides">
-                    <app-qr-code id="qrcode" class="fade-in-right" [name]="this.id"/>
+                    <app-qr-code id="qrcode" class="fade-in-right" *ngIf="this.name != undefined && this.surname != undefined" [name]="this.name+'_'+this.surname"/>
                 </div>  
             </div>
             <div class="buttons">

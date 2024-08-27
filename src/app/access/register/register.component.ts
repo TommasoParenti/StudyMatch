@@ -62,10 +62,10 @@ export class RegisterComponent{
     }
   }
 
-  async signUpWithMicrosoft(): Promise<void> {
+  async signUpWithGitHub(): Promise<void> {
     try {
-      await this.autenticazione.microsoftSignUp();
-      this.correct("Inviata l'email di verifica; confermare l'identità.");
+      await this.autenticazione.githubSignUp();
+      this.correct("La tua identità è già confermata da GitHub.");
       const user = await firstValueFrom(this.authService.getUser());
       await this.saveUid(user);
     } catch (error) {

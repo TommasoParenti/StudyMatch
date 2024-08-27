@@ -71,9 +71,9 @@ export class LoginComponent implements OnInit{
     }
   }
 
-  async loginWithMicrosoft(): Promise<void> {
+  async loginWithGitHub(): Promise<void> {
     try {
-      await this.autenticazione.microsoftSignIn();
+      await this.autenticazione.githubSignIn();
       await this.router.navigateByUrl("userswiper");
     } catch (error) {
       if (error.message !== "Prima devi completare il profilo.") {
@@ -110,5 +110,19 @@ export class LoginComponent implements OnInit{
       ["access/register/complete-profile"],
       { state: { redirect: window.location.pathname } }
     );
+  }
+
+  async resetPassword() {
+    try {
+      const form = document.getElementById("form").childNodes;
+      const email = (form[0] as HTMLInputElement).value;
+      await this.autenticazione.reset(email);
+      const correct = document.getElementById("correct-reset")
+      correct.style.display = "flex";
+      setTimeout(()=>{correct.classList.add("fade-out-bubble");}, 2000);
+      setTimeout(()=>{correct.classList.remove("fade-out-bubble"); correct.style.display = "none"}, 2400);
+    } catch (error) {
+      this.error(error.message);
+    }
   }
 }

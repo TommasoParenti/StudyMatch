@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit, OnDestroy{
     try {
       await this.loadUserData();
       this.route.paramMap.subscribe(params => {
-        this.search = params.get('data')!;
+        this.search = (params.get('data')!).replace("_", " ");
         (document.getElementById("search-field") as HTMLInputElement).value = this.search;
       });
       this.refreshInterval = setInterval(() => {

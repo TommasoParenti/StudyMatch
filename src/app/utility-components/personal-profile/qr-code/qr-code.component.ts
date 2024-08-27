@@ -10,6 +10,6 @@ export class QrCodeComponent implements OnInit {
   qrcodeSrc:string = "";
 
   ngOnInit(): void {
-    setTimeout(()=>this.qrcodeSrc = "http://api.qrserver.com/v1/create-qr-code/?data=" + this.name, 300);
+    setTimeout(()=>this.qrcodeSrc = "http://api.qrserver.com/v1/create-qr-code/?data=https://studymatch-99924.web.app/userswiper/search/" + this.name, 300);
   }
 }

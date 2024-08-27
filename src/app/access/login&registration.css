@@ -52,12 +52,13 @@ p {
 }
 
 .small-text {
-    font-size: .7rem
+    font-size: .8rem
 }
 
 .password-reset {
     position: relative;
-    bottom: 0
+    bottom: -0.5rem;
+    cursor: pointer;
 }
 
 input[type=text] {
@@ -163,7 +164,7 @@ a:hover {
 
 .already-account,.missing-account {
     display: none;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     text-decoration: none
 }
 
@@ -182,6 +183,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0.5rem;
 }
 
 h6 {

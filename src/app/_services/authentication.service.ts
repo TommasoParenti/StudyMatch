@@ -55,15 +55,14 @@ export class AuthService {
     }
   }
 
-  async microsoftSignUp(): Promise<void> {
+  async githubSignUp(): Promise<void> {
     try {
-      const provider = new firebase.auth.OAuthProvider('microsoft.com');
+      const provider = new firebase.auth.GithubAuthProvider;
       const usercr = await this.afAuth.signInWithPopup(provider);
       if (!usercr.additionalUserInfo.isNewUser) {
         throw new Error('Già registrato.');
       }
       if (usercr.user) {
-        await usercr.user.sendEmailVerification();
         this.login.register();
       }
     } catch (error) {
@@ -130,9 +129,9 @@ export class AuthService {
     }
   }
 
-  async microsoftSignIn(): Promise<void> {
+  async githubSignIn(): Promise<void> {
     try {
-      const provider = new firebase.auth.OAuthProvider('microsoft.com');
+      const provider = new firebase.auth.GithubAuthProvider();
       const usercr = await this.afAuth.signInWithPopup(provider);
       if (!usercr.user?.emailVerified) {
         throw new Error('Per favore verifica la tua email per accedere.');
@@ -158,6 +157,14 @@ export class AuthService {
   async logout(): Promise<void> {
     try {
       await this.afAuth.signOut();
+    } catch (error) {
+      this.handleAuthErrors(error);
+    }
+  }
+
+  async reset(email): Promise<void> {
+    try {
+      await this.afAuth.sendPasswordResetEmail(email);
     } catch (error) {
       this.handleAuthErrors(error);
     }
@@ -209,6 +216,12 @@ export class AuthService {
         break;
       case 'auth/popup-closed-by-user':
         error.message = 'Annullata l\'operazione.';
+        break;
+      case 'auth/missing-email':
+        error.message = 'Devi inserire un email nel campo email.';
+        break;
+      case 'auth/account-exists-with-different-credential':
+        error.message = "L'account già esiste ma con delle credenziali o provider differente";
         break;
     }         
     throw new Error(error.message);

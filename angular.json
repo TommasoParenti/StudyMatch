@@ -23,10 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": {
-              "base": "./StudyMatch",
-              "browser": ""
-            },
+            "outputPath": "dist/StudyMatch",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -38,8 +35,7 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/assets",
-              "src/firebase-messaging-sw.js"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
@@ -105,6 +101,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
