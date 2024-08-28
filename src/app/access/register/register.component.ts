@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../_services/authentication.service';
 import { Router } from '@angular/router';
 import { DbService } from '../../_services/db.service';
@@ -9,7 +9,7 @@ import { firstValueFrom } from 'rxjs';
   templateUrl: './register.component.html',
   styleUrl: '../login&registration.css'
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent {
   imageurl = "assets/school.png";
   message: string = "Errore inaspettato";
   autenticazione;
@@ -18,12 +18,6 @@ export class RegisterComponent implements OnInit{
   constructor(private authService: AuthService, private firestore: DbService, private router: Router) {
     this.autenticazione = authService;
     this.db = firestore;
-  }
-  
-  ngOnInit(): void {
-    if(!window.navigator.onLine) {
-      this.router.navigate(["/offline"]);
-    }
   }
 
   async signUpWithEmail(): Promise<void> {

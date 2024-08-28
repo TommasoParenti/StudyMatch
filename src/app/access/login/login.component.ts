@@ -19,9 +19,6 @@ export class LoginComponent implements OnInit{
 
   ngOnInit(): void {
     const navigationState = history.state;
-    if(!window.navigator.onLine) {
-      this.router.navigate(["/offline"]);
-    }
     if (navigationState.complete != null) {
       this.correct("Adesso puoi accedere.");
     }

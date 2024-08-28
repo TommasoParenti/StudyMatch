@@ -18,15 +18,13 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AuthService } from './_services/authentication.service';
 import { DbService } from './_services/db.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { OfflineComponent } from './offline/offline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccessComponent,
     UserswiperComponent,
-    GroupswiperComponent,
-    OfflineComponent
+    GroupswiperComponent
   ],
   imports: [
     BrowserModule,

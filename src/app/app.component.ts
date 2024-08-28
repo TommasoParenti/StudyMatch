@@ -6,15 +6,9 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   title = 'StudyMatch';    
   
   constructor(private router: Router) {
-  }
-
-  ngOnInit(): void {
-    if(!window.navigator.onLine) {
-      this.router.navigate(["/offline"]);
-    }
   }
 }

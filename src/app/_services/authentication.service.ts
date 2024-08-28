@@ -226,6 +226,9 @@ export class AuthService {
       case 'auth/account-exists-with-different-credential':
         error.message = "L'account già esiste ma con delle credenziali o provider differente";
         break;
+      case 'auth/network-request-failed':
+        error.message = "Sei offline, ricarica la pagina";
+        break;
     }         
     throw new Error(error.message);
   }
