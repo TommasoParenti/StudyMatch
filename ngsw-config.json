@@ -7,8 +7,6 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/manifest.webmanifest",
-          "/*.css"
         ]
       }
     },

@@ -1,3 +1,4 @@
+
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = "offline";
 const OFFLINE_URL = "assets/offline.html";
@@ -25,11 +26,8 @@ self.addEventListener("fetch", (event) => {
           const networkResponse = await fetch(event.request);
           return networkResponse;
         } catch (error) {
-            console.log("Fetch failed; returning offline page instead.", error);
             const cache = await caches.open(CACHE_NAME);
-            console.log(cache);
             const cachedResponse = await cache.match(OFFLINE_URL);
-            console.log(cachedResponse);
             return cachedResponse;
         }
       })()
