@@ -1,6 +1,9 @@
 // Importa le funzioni necessarie da Firebase SDK
 const { initializeApp } = require('firebase/app');
 const { getFirestore, collection, addDoc, updateDoc } = require('firebase/firestore');
+const { getStorage, ref, uploadBytes, getDownloadURL } = require('firebase/storage');
+const fs = require('fs');
+const path = require('path');
 
 // Configura Firebase
 const firebaseConfig = {
@@ -17,17 +20,46 @@ const firebaseConfig = {
 // Inizializza Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const storage = getStorage(app);
+
+// Funzione per caricare un'immagine su Firebase Storage
+async function uploadImageToStorage(filePath, fileName) {
+    const storageRef = ref(storage, `profileImages/${fileName}`);
+    const fileBuffer = fs.readFileSync(filePath);
+    const metadata = {
+        contentType: 'image/jpeg', // Può variare in base al tipo di file
+    };
+    const snapshot = await uploadBytes(storageRef, fileBuffer, metadata);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    return downloadURL;
+}
 
 // Funzione per inserire i dati di un JSON nella collezione "user"
 async function addUsersFromJSON(userData) {
     try {
         for (const user of userData) {
+            // Genera un nome file per l'immagine basato su nome e cognome
+            const fileName = `${user.name.toLowerCase()}_${user.surname.toLowerCase()}.jpg`;
+            console.log(fileName);
+            const filePath = path.join(__dirname, 'profiles_pictures', fileName);
+            console.log(filePath);
+
+            // Carica l'immagine su Firebase Storage e ottieni l'URL
+            const profileImageURL = await uploadImageToStorage(filePath, fileName);
+
+            // Aggiungi l'URL dell'immagine ai dati dell'utente
+            user.profileImageURL = profileImageURL;
+
+            // Aggiungi il documento a Firestore
             const docRef = await addDoc(collection(db, "user"), {
                 ...user,
             });
+
+            // Aggiorna il documento con il campo id
             await updateDoc(docRef, {
                 id: docRef.id
-            })
+            });
+
             console.log("Documento aggiunto con ID: ", docRef.id);
         }
     } catch (e) {
@@ -38,6 +70,7 @@ async function addUsersFromJSON(userData) {
 // Esempio di JSON con i dati dell'utente
 const userData = [
     {
+        bot: true,
         accepted: [],
         accepted_groups: [],
         age: 21,
@@ -55,10 +88,11 @@ const userData = [
         rejected_groups: [],
         requests: {},
         telegram: "@luciab",
-        profileImageULR: "",
+        profileImageULR: "",  // Questo sarà aggiornato dinamicamente
         verified: true
     },
     {
+        bot: true,
         accepted: [],
         accepted_groups: [],
         age: 24,
@@ -76,10 +110,11 @@ const userData = [
         rejected_groups: [],
         requests: {},
         telegram: "@marcorossi",
-        profileImageULR: "",
+        profileImageULR: "",  // Questo sarà aggiornato dinamicamente
         verified: true
     },
     {
+        bot: true,
         accepted: [],
         accepted_groups: [],
         age: 22,
@@ -97,7 +132,7 @@ const userData = [
         rejected_groups: [],
         requests: {},
         telegram: "@mattiab",
-        profileImageULR: "",
+        profileImageULR: "",  // Questo sarà aggiornato dinamicamente
         verified: true
     }
 ];
