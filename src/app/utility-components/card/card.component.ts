@@ -41,7 +41,13 @@ export class CardComponent implements AfterViewInit {
         actualcard.classList.add("grab");
         document.getElementsByClassName("cards")[0].classList.remove("grabbed");
         window.removeEventListener('mousemove', movemouseUniqueListener);
-        if(card.style.transform != "rotate(5deg) translateX(200px)" && card.style.transform != "rotate(-5deg) translateX(-200px)") {
+        var max = 200;
+        if(window.innerWidth > 500) {
+          max = 200;
+        } else if(window.innerWidth <= 500) {
+          max = 80;
+        }
+        if(card.style.transform != "rotate(5deg) translateX("+max+"px)" && card.style.transform != "rotate(-5deg) translateX(-"+max+"px)") {
           setTimeout(()=>{
               card.style.transform = "translateX(0px)";   
               card.classList.remove("red");  
@@ -59,7 +65,13 @@ export class CardComponent implements AfterViewInit {
     window.addEventListener('touchend', (e: TouchEvent) => {
       if(window.location.pathname == "/userswiper") {
         window.removeEventListener('touchmove', movetouchUniqueListener);
-        if(card.style.transform != "rotate(5deg) translateX(200px)" && card.style.transform != "rotate(-5deg) translateX(-200px)") {
+        var max = 200;
+        if(window.innerWidth > 500) {
+          max = 200;
+        } else if(window.innerWidth <= 500) {
+          max = 80;
+        }
+        if(card.style.transform != "rotate(5deg) translateX("+max+"px)" && card.style.transform != "rotate(-5deg) translateX(-"+max+"px)") {
           setTimeout(()=>{
               card.style.transform = "translateX(0px)";   
               card.classList.remove("red");  
@@ -78,19 +90,19 @@ export class CardComponent implements AfterViewInit {
   accept() {
     var card = document.getElementById("card-"+this.number);
     if(card!= null)
+      card.classList.add("fade-out");
       setTimeout(()=>{
-        card.classList.add("fade-out");
         this.accepted.emit();
-      }, 100);                  
+      }, 150);                  
   }
   
   reject() {
     var card = document.getElementById("card-"+this.number);
     if(card!= null)
+      card.classList.add("fade-out");
       setTimeout(()=>{
-        card.classList.add("fade-out");
         this.rejected.emit();
-      }, 100);
+      }, 150);
   }
 
   movemouse(number) {
@@ -98,26 +110,32 @@ export class CardComponent implements AfterViewInit {
     return function(e) {
       var cordsX = e.clientX;
       var initialx = card.getBoundingClientRect().left;
+      var max = 200;
+      if(window.innerWidth > 500) {
+        max = 200;
+      } else if(window.innerWidth <= 500) {
+        max = 80;
+      }
       if(cordsX > (initialx+(card.clientWidth/2))) {
-        if((cordsX-(initialx+(card.clientWidth/2)))<200) {
+        if((cordsX-(initialx+(card.clientWidth/2)))<max) {
           card.style.transform = "rotate(5deg) translateX("+(cordsX-(initialx+(card.clientWidth/2)))+"px)";
           card.classList.remove("red");
           card.classList.remove("green");
         }
         else {
-          card.style.transform = "rotate(5deg) translateX(200px)";
+          card.style.transform = "rotate(5deg) translateX("+max+"px)";
           card.classList.remove("red");
           card.classList.add("green");
         }
       }
       else {
-        if((cordsX-(initialx+(card.clientWidth/2)))>-200) {
+        if((cordsX-(initialx+(card.clientWidth/2)))>-max) {
           card.style.transform = "rotate(-5deg) translateX("+(cordsX-(initialx+(card.clientWidth/2)))+"px)";
           card.classList.remove("red");
           card.classList.remove("green");
         }
         else {
-          card.style.transform = "rotate(-5deg)  translateX(-200px)";
+          card.style.transform = "rotate(-5deg)  translateX(-"+max+"px)";
           card.classList.remove("green");
           card.classList.add("red");
         }
@@ -130,26 +148,32 @@ export class CardComponent implements AfterViewInit {
     return function(e) {
       var cordsX = e.touches[0].clientX;
       var initialx = card.getBoundingClientRect().left;
+      var max = 200;
+      if(window.innerWidth > 500) {
+        max = 200;
+      } else if(window.innerWidth <= 500) {
+        max = 80;
+      }
       if(cordsX > (initialx+(card.clientWidth/2))) {
-        if((cordsX-(initialx+(card.clientWidth/2)))<200) {
+        if((cordsX-(initialx+(card.clientWidth/2)))<max) {
           card.style.transform = "rotate(5deg) translateX("+(cordsX-(initialx+(card.clientWidth/2)))+"px)";
           card.classList.remove("red");
           card.classList.remove("green");
         }
         else {
-          card.style.transform = "rotate(5deg) translateX(200px)";
+          card.style.transform = "rotate(5deg) translateX("+max+"px)";
           card.classList.remove("red");
           card.classList.add("green");
         }
       }
       else {
-        if((cordsX-(initialx+(card.clientWidth/2)))>-200) {
+        if((cordsX-(initialx+(card.clientWidth/2)))>-max) {
           card.style.transform = "rotate(-5deg) translateX("+(cordsX-(initialx+(card.clientWidth/2)))+"px)";
           card.classList.remove("red");
           card.classList.remove("green");
         }
         else {
-          card.style.transform = "rotate(-5deg)  translateX(-200px)";
+          card.style.transform = "rotate(-5deg)  translateX(-"+max+"px)";
           card.classList.remove("green");
           card.classList.add("red");
         }

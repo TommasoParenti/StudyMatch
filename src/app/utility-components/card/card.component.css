@@ -3,12 +3,13 @@
 .card {
     position: relative;
     background-size: cover;
+    background-position: center;
     width: 20rem;
     height: 30rem;
     border-radius: 28px;
-    transition: 0.4s;
+    transition: .4s;
     z-index: inherit;
-    filter: drop-shadow(2px 0px 10px rgba(0, 0, 0, 0.425));
+    filter: drop-shadow(2px 0 10px rgba(0,0,0,.425))
 }
 
 .card::after {
@@ -18,46 +19,42 @@
     height: 100%;
     background-color: transparent;
     border-radius: 28px;
-    transition: .5s;
+    transition: .5s
 }
 
 .grab {
-    cursor: grab;
+    cursor: grab
 }
 
-.red::after {
-    content: url('../../../assets/dislike-1.svg');
+.green::after,.red::after {
+    content: url(../../../assets/dislike-1.svg);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:rgba(48, 2, 2, 0.616);
+    background-color: rgba(48,2,2,.616);
     transition: .4s;
-    box-shadow: 0px 0px 10px red;
-    backdrop-filter: blur(3px);
+    box-shadow: 0 0 10px red;
+    backdrop-filter: blur(3px)
 }
 
 .green::after {
-    content: url('../../../assets/like-1.svg');
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(10, 54, 14, 0.616);
-    transition: .4s;
-    box-shadow: 0px 0px 10px green;
-    backdrop-filter: blur(3px);
+    content: url(../../../assets/like-1.svg);
+    background-color: rgba(10,54,14,.616);
+    box-shadow: 0 0 10px green
 }
 
 .bottom {
     position: absolute;
     bottom: 1rem;
-    width: 100%;
+    width: 100%
 }
 
 .bottom p {
     display: none;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.623);
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,.623);
     margin: 1rem;
+    font-size: 1.2rem
 }
 
 .prevent-select {
@@ -67,29 +64,31 @@
 }
 
 .verify {
-    margin-left: 0.5rem;
+    margin-left: .1rem;
+    margin-top: .2rem;
     font-size: 1.1rem;
     color: #007aff;
+    text-shadow: 0 0 5px #fff
 }
 
 .fade-in {
-    animation: fadeIn ease-in .1s;
-    -webkit-animation: fadeIn ease-in .1s;
-    -moz-animation: fadeIn ease-in .1s;
-    -o-animation: fadeIn ease-in .1s;
-    -ms-animation: fadeIn ease-in .1s
+    animation: fadeIn ease-in .5s;
+    -webkit-animation: fadeIn ease-in .5s;
+    -moz-animation: fadeIn ease-in .5s;
+    -o-animation: fadeIn ease-in .5s;
+    -ms-animation: fadeIn ease-in .5s
 }
 
 .fade-out {
-    animation: fadeOut ease-in 0.5s;
-    -webkit-animation: fadeOut ease-in 0.5s;
-    -moz-animation: fadeOut ease-in 0.5s;
-    -o-animation: fadeOut ease-in 0.5s;
-    -ms-animation: fadeOut ease-in 0.5s
+    animation: fadeOut ease-in .5s;
+    -webkit-animation: fadeOut ease-in .5s;
+    -moz-animation: fadeOut ease-in .5s;
+    -o-animation: fadeOut ease-in .5s;
+    -ms-animation: fadeOut ease-in .5s
 }
 
 @media all and (max-width:700px) {
-    .bottom p{
+    .bottom p {
         display: block
     }
 }

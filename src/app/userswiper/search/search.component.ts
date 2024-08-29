@@ -29,7 +29,10 @@ export class SearchComponent implements OnInit, OnDestroy{
     try {
       await this.loadUserData();
       this.route.paramMap.subscribe(params => {
-        this.search = (params.get('data')!).replace("_", " ");
+        if(params.get('data')! != null)
+          this.search = (params.get('data')!).replace("_", " ");
+        else 
+          this.search = params.get('data')!;
         (document.getElementById("search-field") as HTMLInputElement).value = this.search;
       });
       this.refreshInterval = setInterval(() => {
@@ -132,6 +135,7 @@ export class SearchComponent implements OnInit, OnDestroy{
         this.correct("Richiesta mandata con successo.");
       }
     } catch (error) {
+      (document.getElementById("button-"+id) as HTMLButtonElement).disabled = false;
       throw error;
     }
   }

@@ -217,19 +217,18 @@ app-profile,app-qr-code {
 
 @media all and (min-width:480px) and (max-width:900px) {
     .block {
-        width: 70%;
+        width: 70%
     }
-    
 }
 
 @media all and (max-width:480px) {
     .block {
-        width: 70%;
+        width: 70%
     }
 }
 
 @media all and (max-height:650px) {
     .block {
-        height: 85%;
+        height: 85%
     }
 }

@@ -6,7 +6,7 @@
     display: flex;
     width: 100%;
     margin-top: 1rem;
-    overflow-y: auto;
+    overflow-y: auto
 }
 
 .left-column,.middle-column,.right-column,app-segmented-control {
@@ -63,17 +63,13 @@ i {
     font-size: 1.1rem
 }
 
-a {
-    margin: .1rem
-}
-
 a:hover>i {
     color: #3f3f3f
 }
 
 a:hover>i,i {
     transition: .2s;
-    cursor: pointer;
+    cursor: pointer
 }
 
 .badge {
@@ -110,8 +106,12 @@ a:hover>i,i {
     z-index: 100
 }
 
-.displaynone {
+.displaynone,.displayonlymobile {
     display: none!important
+}
+
+.displayonlymobile {
+    margin-left: 1.5rem
 }
 
 .displayblock,.displaynotmobile {
@@ -142,11 +142,25 @@ label {
     -ms-animation: fadeOutLeft ease-in .5s
 }
 
+@media all and (min-width:750px) and (max-width:900px) {
+    .bi-chat-dots-fill,.bi-send-fill {
+        margin: 0!important
+    }
+
+    #accept-request {
+        width: 2rem
+    }
+
+    #messages {
+        width: 2.5rem
+    }
+}
+
 @media screen and (max-width:750px) {
     .topnav.responsive .profile {
-        margin: 0;   
+        margin: 0;
         width: 3rem;
-        height: 3rem;
+        height: 3rem
     }
 
     .left-column,.right-column {
@@ -161,16 +175,16 @@ label {
         margin: 0
     }
 
-    .topnav.responsive .displaynotmobile,.topnav.responsive a {
+    .displayonlymobile,.topnav.responsive .displaynotmobile,.topnav.responsive a {
         display: block!important
+    }
+
+    .displaynotmobile,.topnav.responsive .displayblock,.topnav.responsive .displayonlymobile,app-segmented-control {
+        display: none!important
     }
 
     .topnav a {
         display: none
-    }
-
-    .displaynotmobile,.topnav.responsive .displayblock,app-segmented-control {
-        display: none!important
     }
 
     a.icon {

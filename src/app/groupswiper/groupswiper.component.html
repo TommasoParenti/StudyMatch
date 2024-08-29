@@ -27,7 +27,7 @@
         </div>
         <div class="right-column">
             <div class="images">
-                <div *ngFor="let item of vectorImage[id]; let i = index;" class="image" [ngClass]="{'image-more': i == nummax, 'display-none': i >= nummax+1}">
+                <div *ngFor="let item of vectorImage[id]; let i = index;" class="image" [ngClass]="{'image-more': i == nummax, 'display-none': i >= nummax+1, 'oneImage': vectorImage[id].length == 1, 'twoImages': vectorImage[id].length == 2, 'threeImages': vectorImage[id].length == 3}">
                     <img [src]="item">
                     <p *ngIf="i == nummax">+{{vectorImage.length-nummax}}</p>
                 </div>

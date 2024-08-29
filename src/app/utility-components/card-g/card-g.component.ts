@@ -39,7 +39,13 @@ export class CardGComponent implements AfterViewInit{
         actualcard.classList.add("grab");
         document.getElementsByClassName("cards")[0].classList.remove("grabbed");
         window.removeEventListener('mousemove', movemouseUniqueListener);
-        if(card.style.transform != "rotate(5deg) translateX(200px)" && card.style.transform != "rotate(-5deg) translateX(-200px)") {
+        var max = 200;
+        if(window.innerWidth > 500) {
+          max = 200;
+        } else if(window.innerWidth <= 500) {
+          max = 80;
+        }
+        if(card.style.transform != "rotate(5deg) translateX("+max+"px)" && card.style.transform != "rotate(-5deg) translateX(-"+max+"px)") {
           setTimeout(()=>{
               card.style.transform = "translateX(0px)";   
               card.classList.remove("red");  
@@ -57,7 +63,13 @@ export class CardGComponent implements AfterViewInit{
     window.addEventListener('touchend', (e: TouchEvent) => {
       if(window.location.pathname == "/groupswiper") {
         window.removeEventListener('touchmove', movetouchUniqueListener);
-        if(card.style.transform != "rotate(5deg) translateX(200px)" && card.style.transform != "rotate(-5deg) translateX(-200px)") {
+        var max = 200;
+        if(window.innerWidth > 500) {
+          max = 200;
+        } else if(window.innerWidth <= 500) {
+          max = 80;
+        }
+        if(card.style.transform != "rotate(5deg) translateX("+max+"px)" && card.style.transform != "rotate(-5deg) translateX(-"+max+"px)") {
           setTimeout(()=>{
               card.style.transform = "translateX(0px)";   
               card.classList.remove("red");  
@@ -71,39 +83,24 @@ export class CardGComponent implements AfterViewInit{
         }
       }
     }, false);
-
-    setTimeout(() => {
-      console.log(this.imagevector);
-  
-      if(this.imagevector.length == 1) {
-        document.getElementById("img-0").classList.add("oneImage");
-      } else if(this.imagevector.length == 2) {
-        document.getElementById("img-0").classList.add("twoImages");
-        document.getElementById("img-1").classList.add("twoImages");
-      } else if(this.imagevector.length == 3) {
-        document.getElementById("img-0").classList.add("threeImages");
-        document.getElementById("img-1").classList.add("threeImages"); 
-        document.getElementById("img-2").classList.add("threeImages");
-      }
-    },500)
   }
 
   accept() {
     var card = document.getElementById("card-"+this.number);
     if(card!= null)
+      card.classList.add("fade-out");
       setTimeout(()=>{
-        card.classList.add("fade-out");
         this.accepted.emit();
-      }, 100);                  
+      }, 150);                  
   }
   
   reject() {
     var card = document.getElementById("card-"+this.number);
     if(card!= null)
+      card.classList.add("fade-out");
       setTimeout(()=>{
-        card.classList.add("fade-out");
         this.rejected.emit();
-      }, 100);
+      }, 150);
   }
 
   movemouse(number) {
@@ -111,26 +108,32 @@ export class CardGComponent implements AfterViewInit{
     return function(e) {
       var cordsX = e.clientX;
       var initialx = card.getBoundingClientRect().left;
+      var max = 200;
+      if(window.innerWidth > 500) {
+        max = 200;
+      } else if(window.innerWidth <= 500) {
+        max = 80;
+      }
       if(cordsX > (initialx+(card.clientWidth/2))) {
-        if((cordsX-(initialx+(card.clientWidth/2)))<200) {
+        if((cordsX-(initialx+(card.clientWidth/2)))<max) {
           card.style.transform = "rotate(5deg) translateX("+(cordsX-(initialx+(card.clientWidth/2)))+"px)";
           card.classList.remove("red");
           card.classList.remove("green");
         }
         else {
-          card.style.transform = "rotate(5deg) translateX(200px)";
+          card.style.transform = "rotate(5deg) translateX("+max+"px)";
           card.classList.remove("red");
           card.classList.add("green");
         }
       }
       else {
-        if((cordsX-(initialx+(card.clientWidth/2)))>-200) {
+        if((cordsX-(initialx+(card.clientWidth/2)))>-max) {
           card.style.transform = "rotate(-5deg) translateX("+(cordsX-(initialx+(card.clientWidth/2)))+"px)";
           card.classList.remove("red");
           card.classList.remove("green");
         }
         else {
-          card.style.transform = "rotate(-5deg)  translateX(-200px)";
+          card.style.transform = "rotate(-5deg)  translateX(-"+max+"px)";
           card.classList.remove("green");
           card.classList.add("red");
         }
@@ -143,26 +146,32 @@ export class CardGComponent implements AfterViewInit{
     return function(e) {
       var cordsX = e.touches[0].clientX;
       var initialx = card.getBoundingClientRect().left;
+      var max = 200;
+      if(window.innerWidth > 500) {
+        max = 200;
+      } else if(window.innerWidth <= 500) {
+        max = 80;
+      }
       if(cordsX > (initialx+(card.clientWidth/2))) {
-        if((cordsX-(initialx+(card.clientWidth/2)))<200) {
+        if((cordsX-(initialx+(card.clientWidth/2)))<max) {
           card.style.transform = "rotate(5deg) translateX("+(cordsX-(initialx+(card.clientWidth/2)))+"px)";
           card.classList.remove("red");
           card.classList.remove("green");
         }
         else {
-          card.style.transform = "rotate(5deg) translateX(200px)";
+          card.style.transform = "rotate(5deg) translateX("+max+"px)";
           card.classList.remove("red");
           card.classList.add("green");
         }
       }
       else {
-        if((cordsX-(initialx+(card.clientWidth/2)))>-200) {
+        if((cordsX-(initialx+(card.clientWidth/2)))>-max) {
           card.style.transform = "rotate(-5deg) translateX("+(cordsX-(initialx+(card.clientWidth/2)))+"px)";
           card.classList.remove("red");
           card.classList.remove("green");
         }
         else {
-          card.style.transform = "rotate(-5deg)  translateX(-200px)";
+          card.style.transform = "rotate(-5deg)  translateX(-"+max+"px)";
           card.classList.remove("green");
           card.classList.add("red");
         }

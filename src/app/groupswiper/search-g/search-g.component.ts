@@ -85,6 +85,7 @@ export class SearchGComponent implements OnInit, OnDestroy{
       
       this.correct();
     } catch (error) {
+      (document.getElementById("button-"+id) as HTMLButtonElement).disabled = false;
       throw error;
     }
   }

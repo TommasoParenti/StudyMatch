@@ -24,7 +24,7 @@
                                 <a [href]="'https://www.instagram.com/'+item.instagram.substring(1)" target="_blank"><button>{{item.instagram}}</button></a>
                                 <a [href]="item.phone" target="_blank"><button class="lastButton">Whatsapp</button></a>
                             </div>
-                            <button *ngIf="user.rejected_groups.indexOf(item.id) != -1 || item.rejected.indexOf(user.id) != -1 && item.requests[user.id] == null" class="rejected">Rifiutato</button>
+                            <button *ngIf="user.rejected_groups.indexOf(item.id) != -1 || item.rejected.indexOf(user.id) != -1 && item.requests[user.id] == null" class="rejected">Richiesta rifiutata</button>
                             <button *ngIf="item.requests[user.id] != undefined" class="already-requested" disabled>Richiesta già inviata</button>
                         </div>
                     </div>

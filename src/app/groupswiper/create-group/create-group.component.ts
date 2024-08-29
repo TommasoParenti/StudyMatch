@@ -39,8 +39,8 @@ export class CreateGroupComponent {
     if (!name || !contacts || !locationtime || !description) {
       throw new Error("Qualche campo è vuoto.");
     }
-    if (name.length >= 20) {
-      throw new Error("Nome troppo lungo.");
+    if (name.length >= 30) {
+      throw new Error("Nome troppo lungo. (Max 30 caratteri)");
     } else if (!/^[\s\S]+, \d\d-\d\d$/.test(locationtime)) {
       throw new Error("Il luogo e l'orario devono essere nella forma: luogo, ora-ora.");
     } else if (!/^https:\/\/t\.me\/[^\s,]+,\s@[\w.]+,\shttps:\/\/chat\.whatsapp\.com\/[^\s,]+$/.test(contacts)) {
@@ -97,6 +97,7 @@ export class CreateGroupComponent {
         }
       }, 300)
     } catch (error: any) {
+      (document.getElementById("create-button") as HTMLButtonElement).disabled = false;
       this.error(error.message);
     }
   }

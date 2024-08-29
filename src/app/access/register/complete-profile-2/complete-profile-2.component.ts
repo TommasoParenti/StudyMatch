@@ -35,6 +35,7 @@ export class CompleteProfile2Component{
   }
 
   fadeoutsv() {
+    (document.getElementById("confirm-button") as HTMLButtonElement).disabled = true;
     const y = document.getElementById("block");
     const x = document.getElementById("photo-block");
     const telegram = (document.getElementById("Telegram") as HTMLInputElement).value;
@@ -42,18 +43,22 @@ export class CompleteProfile2Component{
     const phone = (document.getElementById("Telefono") as HTMLInputElement).value;
 
     if (!telegram || !instagram || !phone) {
+      (document.getElementById("confirm-button") as HTMLButtonElement).disabled = false;
       this.error("Qualche campo è vuoto.");
       return;
     }
     if (!telegram.startsWith("@")) {
+      (document.getElementById("confirm-button") as HTMLButtonElement).disabled = false;
       this.error("Lo user telegram deve iniziare con @.");
       return;
     }
     if (!instagram.startsWith("@")) {
+      (document.getElementById("confirm-button") as HTMLButtonElement).disabled = false;
       this.error("Lo user instagram deve iniziare con @.");
       return;
     }
     if (!/^\+\d{2}(\s?\d{10})$/.test(phone)) {
+      (document.getElementById("confirm-button") as HTMLButtonElement).disabled = false;
       this.error("Non hai fornito un numero di telefono valido.");
       return;
     }

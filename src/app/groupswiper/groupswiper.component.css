@@ -1,27 +1,27 @@
 @import url(../../animations.css);
 
 @keyframes spin {
-    0% { 
-        transform: rotate(0deg); 
+    0% {
+        transform: rotate(0deg)
     }
 
-    to { 
-        transform: rotate(360deg); 
+    to {
+        transform: rotate(360deg)
     }
 }
 
 app-filter {
     display: none;
     position: absolute;
-    top: 0rem;
-    right: 0rem;
+    top: 0;
+    right: 0;
     width: 100%;
-    z-index: 98 !important;
+    z-index: 98!important
 }
 
 app-navbar {
     position: absolute;
-    z-index: 99;
+    z-index: 99
 }
 
 .cards {
@@ -31,89 +31,88 @@ app-navbar {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    z-index: 0;
+    z-index: 0
 }
 
 app-card {
-    margin: 1rem;
+    margin: 1rem
 }
 
 .middle-card {
-    z-index: 100;
+    z-index: 100
+}
+
+.explore,.profile-info {
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 .explore {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     bottom: 1rem;
-    font-size: 0.9rem;
-    color: #B1B1B1;
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.116);
+    font-size: .9rem;
+    color: #b1b1b1;
+    text-shadow: 0 0 5px rgba(0,0,0,.116)
 }
 
 .explore p {
-    margin: 0.2rem;
+    margin: .2rem
 }
 
 .profile-info {
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     background-color: #fafafa;
-    box-shadow: inset 3px 4px 30px rgb(0, 0, 0, 23%);
+    box-shadow: inset 3px 4px 30px rgb(0,0,0,23%)
 }
 
 .block {
     position: relative;
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     border-radius: 14px;
     width: 60%;
     height: 70%;
     padding: 1rem 0 2rem;
-    box-shadow: 3px 4px 30px rgb(0, 0, 0, 10%);
+    box-shadow: 3px 4px 30px rgb(0,0,0,10%);
     display: flex;
-    align-items: stretch;
+    align-items: stretch
+}
+
+.left-column,.right-column {
+    height: 100%;
+    display: flex;
+    justify-content: center
 }
 
 .left-column {
-    display: flex;
     align-items: flex-start;
     flex-direction: column;
-    justify-content: center;
     width: 60%;
-    height: 100%;
-    margin-left: 3rem;
+    margin-left: 3rem
 }
 
 .right-column {
     width: 40%;
-    height: 100%;
     min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
+    align-items: center
 }
 
-.left-column h2, p{
-    margin: 0.7rem;
+.left-column h2,button,p {
+    margin: .7rem
 }
 
 h2 {
     font-size: 1.8rem;
-    margin-top: 2rem !important; 
+    margin-top: 2rem!important
 }
 
 .descrizione {
-    width: 100%;
     text-align: left;
-    margin-bottom: 3rem;
-    font-style: italic;
+    margin-bottom: 2rem;
+    font-style: italic
 }
 
 button {
@@ -122,14 +121,13 @@ button {
     border: 0;
     width: auto;
     padding: .5rem;
-    margin: 0.7rem;
     border-radius: 10px;
     transition: .1s
 }
 
 .small-text {
-    margin: 0 0 0 0.7rem;
-    font-size: 0.8rem;
+    margin: 0 0 0 .7rem;
+    font-size: .8rem
 }
 
 .images {
@@ -137,14 +135,34 @@ button {
     width: auto;
     display: flex;
     flex-wrap: wrap;
-    margin: 2rem 1rem 1rem 1rem;
+    margin: 0 1rem 1rem
+}
+
+.oneImage {
+    width: 100%!important;
+    height: 16rem!important
+}
+
+.threeImages,.twoImages {
+    width: 100%!important;
+    height: 12rem!important
+}
+
+.threeImages {
+    height: 7rem!important
 }
 
 .image {
     position: relative;
     width: 44.2%;
     height: 8rem;
-    margin: 0.5rem;
+    margin: .5rem
+}
+
+.image-more::after,img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px
 }
 
 .image-more::after {
@@ -152,11 +170,8 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.527);
-    border-radius: 10px;
-    backdrop-filter: blur(2px);
+    background-color: rgba(0,0,0,.527);
+    backdrop-filter: blur(2px)
 }
 
 .image-more p {
@@ -164,32 +179,29 @@ button {
     top: 40%;
     right: 45%;
     z-index: 100;
-    color: white;
+    color: #fff;
     font-weight: 500;
-    margin: auto;
+    margin: auto
 }
 
 img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.329);
+    box-shadow: 0 0 10px rgba(0,0,0,.329)
 }
 
 .end-match {
-    color: rgba(0, 0, 0, 0.233);
+    color: rgba(0,0,0,.233);
     font-size: 2rem;
     font-weight: 500;
-    text-align: center;
+    text-align: center
 }
 
 .grabbed {
-    cursor: grabbing !important;
+    cursor: grabbing!important
 }
 
 .display-none {
-    display: none;
+    display: none
 }
 
 .overlay {
@@ -198,26 +210,26 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.979);
+    background: rgba(255,255,255,.979);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    transition: opacity 0.5s ease;
+    transition: opacity .5s ease
 }
 
 .spinner {
     border: 10px solid #dfdfdf;
-    border-top: 10px solid #6d6d6d; /* Colore della ruota */
+    border-top: 10px solid #6d6d6d;
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite
 }
 
 b {
-    font-weight: 400;
+    font-weight: 400
 }
 
 .fade-in {
@@ -238,54 +250,52 @@ b {
 
 @media all and (min-width:768px) and (max-width:1070px) {
     .block {
-        width: 80%;
+        width: 80%
     }
 }
 
 @media all and (min-width:480px) and (max-width:768px) {
     .block {
         width: 85%;
-        flex-direction: column;
+        flex-direction: column
     }
-    
+
     .left-column {
         width: 100%;
         height: 60%;
         margin-left: 2rem;
-        text-align: left;
+        text-align: left
     }
 
     .right-column {
-        width: 100%;        
+        width: 100%;
         height: 40%;
         margin-top: 1rem;
         min-height: 50%;
-        margin-left: 0rem;
-        text-align: left;
+        margin-left: 0;
+        text-align: left
     }
-
 }
 
 @media all and (max-width:480px) {
     .block {
         width: 90%;
-        flex-direction: column;
+        flex-direction: column
     }
 
     .left-column {
         width: 100%;
         height: 50%;
         margin-left: 1rem;
-        text-align: left;
+        text-align: left
     }
 
     .right-column {
-        width: 100%;        
+        width: 100%;
         height: 55%;
         margin-top: 1rem;
         min-height: 50%;
-        margin-left: 0rem;
-        text-align: left;
+        margin-left: 0;
+        text-align: left
     }
-
 }

@@ -66,6 +66,11 @@ h2 {
     margin: 0
 }
 
+h6 {
+    color: #fff;
+    font-size: .9rem
+}
+
 p {
     margin: 0 0 1.5rem
 }
@@ -161,11 +166,6 @@ b {
     font-weight: 500
 }
 
-h6 {
-    color: #fff;
-    font-size: .9rem
-}
-
 .correct-float p {
     color: rgba(255,255,255,.781);
     font-weight: 400
@@ -186,7 +186,7 @@ h6 {
     align-items: center;
     flex-direction: column;
     z-index: 100;
-    padding: 0.5rem;
+    padding: .5rem
 }
 
 .verify {
@@ -255,12 +255,12 @@ h6 {
 
 @media all and (min-width:480px) and (max-width:768px) {
     .correct-float {
-        top: 4rem;
+        top: 4rem
     }
 }
 
 @media all and (max-width:480px) {
     .correct-float {
-        top: 4rem;
+        top: 4rem
     }
 }

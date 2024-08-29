@@ -66,6 +66,7 @@ export class CompleteProfile1Component implements OnInit{
   }
 
   async fadeoutsv(to: string) {
+    (document.getElementById("confirm-button") as HTMLButtonElement).disabled = true;
     try {
       await this.savedata();
       const x = document.getElementById("background");
@@ -80,6 +81,7 @@ export class CompleteProfile1Component implements OnInit{
         }, 450);
       }
     } catch (error: any) {
+      (document.getElementById("confirm-button") as HTMLButtonElement).disabled = false;
       this.error(error.message);
     }
   }
@@ -96,9 +98,9 @@ export class CompleteProfile1Component implements OnInit{
       throw new Error("Qualche campo è vuoto.");
     }
     if (name.length >= 20) {
-      throw new Error("Nome troppo lungo.");
+      throw new Error("Nome troppo lungo. (Max 20 caratteri)");
     } else if (surname.length >= 20) {
-      throw new Error("Cognome troppo lungo.");
+      throw new Error("Cognome troppo lungo. (Max 20 caratteri)");
     } else if (isNaN(Number(age))) {
       throw new Error("L'età non è un intero.");
     }

@@ -31,18 +31,19 @@
     min-width: 300px
 }
 
-form {
+.inputs,form {
     width: 100%;
+    display: flex
+}
+
+form {
     height: 100%;
-    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center
 }
 
 .inputs {
-    width: 100%;
-    display: flex;
     justify-content: center;
     flex-direction: row
 }
@@ -68,7 +69,7 @@ h2 {
 }
 
 p {
-    margin: 0 0 1.5rem
+    margin: 0
 }
 
 a,a:hover {
@@ -147,6 +148,10 @@ input[type=file]:focus+label,input[type=file]:hover+label,input[type=text]:focus
 
 #output,button {
     border-radius: 19px
+}
+
+.margin-bottom {
+    margin-bottom: 1.5rem
 }
 
 button {
@@ -300,6 +305,13 @@ video {
     opacity: .5
 }
 
+.small-text {
+    color: #5e5e5e;
+    font-size: .8rem!important;
+    margin-top: .4rem;
+    margin-bottom: 1.5rem
+}
+
 .fade-in {
     animation: fadeIn ease-in .5s;
     -webkit-animation: fadeIn ease-in .5s;
@@ -355,7 +367,7 @@ video {
     }
 
     input[type=text],textarea {
-        width: 90%;
+        width: 90%
     }
 
     .larger-button {
@@ -387,7 +399,7 @@ video {
     }
 
     input[type=text],textarea {
-        width: 90%;
+        width: 90%
     }
 
     .larger-button {

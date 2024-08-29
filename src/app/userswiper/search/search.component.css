@@ -50,11 +50,8 @@
     text-align: center
 }
 
-.return,img {
-    position: absolute
-}
-
 .return {
+    position: absolute;
     top: 20px;
     left: 20px
 }
@@ -97,7 +94,7 @@ button:hover {
     transition: .1s
 }
 
-.buttons {
+.buttons,.group {
     display: flex;
     flex-direction: column
 }
@@ -115,41 +112,51 @@ button:hover {
     margin-bottom: .5rem
 }
 
+h3 {
+    margin-top: 0
+}
+
+.group {
+    position: relative;
+    flex-direction: row;
+    width: 90%;
+    padding: 1rem
+}
+
 img {
-    top: 2rem;
-    left: 1rem;
-    width: 3rem;
-    height: 3rem;
+    width: 3.2rem;
+    height: 3.2rem;
     object-fit: cover;
     border-radius: 100%
+}
+
+.profile,.profiles {
+    display: flex;
+    justify-content: center
 }
 
 .profiles {
     width: 95%;
     overflow-y: auto;
-    display: flex;
     flex-wrap: wrap;
     gap: 30px;
     margin-top: 1.7rem;
-    margin-left: .2rem;
-    justify-content: center
+    margin-left: .2rem
 }
 
 .profile {
     position: relative;
     background-color: rgba(255,255,255,.89);
     border-radius: 8px;
-    width: 80%;
-    display: flex;
+    width: 85%;
     align-items: center;
-    padding-bottom: .8rem;
     min-height: 200px
 }
 
 .information {
     text-align: left;
-    width: 80%;
-    margin-left: 5.5rem
+    width: 70%;
+    margin-left: 2rem
 }
 
 p {
@@ -219,23 +226,24 @@ h6 {
     align-items: center;
     flex-direction: column;
     z-index: 100;
-    padding: 0.5rem;
+    padding: .5rem
 }
 
 .verify {
-    margin-left: .5rem;
+    position: absolute;
+    margin-top: .1rem;
+    margin-left: .2rem;
     font-size: 1.1rem;
     color: #007aff
 }
 
-.rejected {
-    background-color: #ce0303
-}
-
 .already-requested:hover,.rejected:hover {
-    background-color: #ce0303;
     transform: none;
     cursor: not-allowed
+}
+
+.rejected,.rejected:hover {
+    background-color: #ce0303
 }
 
 .already-requested,.already-requested:hover {
@@ -290,14 +298,46 @@ h6 {
     -ms-animation: fadeOutBubble ease-in .5s
 }
 
+@media all and (min-width:1070px) and (max-width:1300px) {
+    .block {
+        width: 30%
+    }
+}
+
+@media all and (min-width:768px) and (max-width:1070px) {
+    .block {
+        width: 40%
+    }
+}
+
 @media all and (min-width:480px) and (max-width:768px) {
+    .block {
+        width: 60%
+    }
+
     .correct-float {
-        top: 4rem;
+        top: 4rem
+    }
+
+    p {
+        font-size: 1.05rem!important
+    }
+
+    button {
+        font-size: .8rem!important
     }
 }
 
 @media all and (max-width:480px) {
     .correct-float {
-        top: 4rem;
+        top: 4rem
+    }
+
+    p {
+        font-size: 1.05rem!important
+    }
+
+    button {
+        font-size: .8rem!important
     }
 }

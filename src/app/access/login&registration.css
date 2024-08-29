@@ -28,7 +28,7 @@ form {
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    margin: auto;
+    margin: auto
 }
 
 h1,h2 {
@@ -58,12 +58,12 @@ p {
 .password-reset {
     position: relative;
     bottom: -1.5rem;
-    cursor: pointer;
+    cursor: pointer
 }
 
 input[type=text] {
     height: 35px;
-    width:70%;
+    width: 70%;
     margin: .3rem;
     padding-left: .7rem;
     border-radius: 8px;
@@ -79,10 +79,9 @@ input[type=text]:focus {
     transition: .1s
 }
 
-input[type=checkbox]:hover {
-    cursor: pointer;
+button:hover,input[type=checkbox]:hover {
+    cursor: pointer
 }
-
 
 button {
     background-color: #007aff;
@@ -96,7 +95,7 @@ button {
 }
 
 .larger-button {
-    width:73%;
+    width: 73%;
     height: 42px;
     border-radius: 40px;
     margin-top: 1.2rem;
@@ -105,7 +104,6 @@ button {
 
 button:hover {
     background-color: #0664c9;
-    cursor: pointer;
     transition: .1s
 }
 
@@ -168,7 +166,7 @@ a:hover {
     text-decoration: none
 }
 
-.error-float {
+.correct-float,.error-float {
     display: none;
     position: absolute;
     top: 4rem;
@@ -178,44 +176,31 @@ a:hover {
     border-radius: 10px;
     width: 14rem;
     height: 4rem;
-    background-color: rgba(250, 121, 121, 0.93);
-    box-shadow: 1px 10px 10px rgba(196, 59, 59, 0.247);
+    background-color: rgba(250,121,121,.93);
+    box-shadow: 1px 10px 10px rgba(196,59,59,.247);
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 0.5rem;
+    padding: .5rem
 }
 
 h6 {
-    color: rgb(255, 255, 255);
-    font-size: 0.9rem;
-    margin: 0;
+    color: #fff;
+    font-size: .9rem;
+    margin: 0
 }
 
-.error-float p, .correct-float p {
-    color: rgba(255, 255, 255, 0.781);
-    font-size: 0.8rem;
+.correct-float p,.error-float p {
+    color: rgba(255,255,255,.781);
+    font-size: .8rem;
     font-weight: 400;
-    margin: 0;
+    margin: 0
 }
 
 .correct-float {
-    display: none;
-    position: absolute;
-    top: 4rem;
-    left: 50%;
-    z-index: 100;
-    transform: translateX(-50%);
-    border-radius: 10px;
     width: 20rem;
-    height: 4rem;
-    background-color: rgba(0, 141, 12, 0.93);
-    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.137);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 100;
-    padding: 0.5rem;
+    background-color: rgba(0,141,12,.93);
+    box-shadow: 1px 10px 10px rgba(0,0,0,.137)
 }
 
 .fade-in {
@@ -250,46 +235,44 @@ h6 {
 
 @media all and (min-width:768px) and (max-width:1070px) {
     input[type=text] {
-        width: 70%;
+        width: 70%
     }
 
     .larger-button {
-        width: 73%;
+        width: 73%
     }
-    
-    
+
     .left-box {
-        width: 100%;
         left: 0;
         padding: 0
     }
 
-    form {
+    .left-box,form {
         width: 100%
     }
 }
 
 @media all and (min-width:480px) and (max-width:768px) {
     input[type=text] {
-        width: 80%;
+        width: 80%
     }
 
     .larger-button {
-        width: 83%;
+        width: 83%
     }
-    
+
     .left-box {
         width: 100%;
         left: 0;
         padding: 0
     }
-    
-    .error-float, .correct-float {
-        top: 4rem;
+
+    .correct-float,.error-float {
+        top: 4rem
     }
 
-    p, input[type=text], textarea, button, i  {
-        font-size: 1.1rem !important;
+    button,i,input[type=text],p,textarea {
+        font-size: 1.1rem!important
     }
 
     form {
@@ -299,23 +282,23 @@ h6 {
 
 @media all and (max-width:480px) {
     input[type=text] {
-        width: 80%;
+        width: 80%
     }
 
     .larger-button {
-        width: 83%;
+        width: 83%
     }
 
-    p, input[type=text], textarea, button, i  {
-        font-size: 1.1rem !important;
+    button,i,input[type=text],p,textarea {
+        font-size: 1.1rem!important
     }
 
     .small-text {
-        font-size: 1rem;
+        font-size: 1rem
     }
-    
-    .error-float, .correct-float {
-        top: 4rem;
+
+    .correct-float,.error-float {
+        top: 4rem
     }
 
     .left-box {

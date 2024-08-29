@@ -58,10 +58,13 @@ h2 {
     font-weight: 600
 }
 
-p {
-    margin: 0 0 1.5rem;
+.correct-float p,h6,p {
     font-size: .8rem;
     margin: 0
+}
+
+p {
+    margin: 0 0 1.5rem
 }
 
 a,a:hover {
@@ -111,10 +114,10 @@ button:hover {
     border-radius: 8px;
     width: 47%;
     display: flex;
-    align-items: center;    
+    align-items: center;
     padding-bottom: 1.3rem;
     min-height: 200px
-}  
+}
 
 .information {
     text-align: left;
@@ -135,21 +138,17 @@ h3 {
 }
 
 b {
-    font-weight: 400;
+    font-weight: 400
 }
 
-
 h6 {
-    color: rgb(255, 255, 255);
-    font-size: 0.9rem;
-    margin: 0;
+    color: #fff;
+    font-size: .9rem
 }
 
 .correct-float p {
-    color: rgba(255, 255, 255, 0.781);
-    font-size: 0.8rem;
-    font-weight: 400;
-    margin: 0;
+    color: rgba(255,255,255,.781);
+    font-weight: 400
 }
 
 .correct-float {
@@ -161,25 +160,25 @@ h6 {
     border-radius: 10px;
     width: 20rem;
     height: 4rem;
-    background-color: rgba(0, 141, 12, 0.93);
-    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.178);
+    background-color: rgba(0,141,12,.93);
+    box-shadow: 1px 10px 10px rgba(0,0,0,.178);
     justify-content: center;
     align-items: center;
     flex-direction: column;
     z-index: 100;
-    padding: 0.5rem;
+    padding: .5rem
 }
 
 .people {
-    color: rgb(163, 163, 163);
-    margin-bottom: 0.5rem;
+    color: #a3a3a3;
+    margin-bottom: .5rem
 }
 
 .end-messages {
-    color: rgba(0, 0, 0, 0.233);
+    color: rgba(0,0,0,.233);
     font-size: 2rem;
     margin-top: 5rem;
-    font-weight: 500;
+    font-weight: 500
 }
 
 .fade-in {
@@ -242,12 +241,12 @@ h6 {
 
 @media all and (min-width:480px) and (max-width:768px) {
     .correct-float {
-        top: 4rem;
+        top: 4rem
     }
 }
 
 @media all and (max-width:480px) {
     .correct-float {
-        top: 4rem;
+        top: 4rem
     }
 }

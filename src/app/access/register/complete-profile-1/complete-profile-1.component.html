@@ -8,7 +8,8 @@
         <form id="form">
             <div class="text">
                 <h2>Completa il profilo</h2>
-                <p>Per completare il profilo fornisci alcune informazioni che permetteranno di farti conoscere brevemente gli altri studenti</p>
+                <p>Per completare il profilo fornisci alcune informazioni che permetteranno di farti conoscere brevemente gli altri studenti.</p>
+                <p class="small-text"><b>Attenzione</b>: Luogo e fascia oraria deve essere inserito nella forma: 'luogo di studio, ora inizio-ora fine'.</p>
             </div>
             <div class="inputs">
                 <div class="left-column">
@@ -18,14 +19,14 @@
                     </div>
                     <div>
                         <input type="text" placeholder="Età" id="eta">
-                        <input type="text" placeholder="Luogo e fascia oraria" id="lfo">
+                        <input type="text" placeholder="Luogo e fascia oraria di studio" id="lfo">
                     </div>
                     <div>
                         <input type="text" placeholder="Città" id="citta">
                         <input type="text" placeholder="Facoltà" id="facolta">
                     </div>
                     <div>
-                        <textarea placeholder="Descrizione (Max 200 caratteri)" id="descrizione" maxlength="200"></textarea>
+                        <textarea placeholder="Descrizione (Max 150 caratteri)" id="descrizione" maxlength="150"></textarea>
                     </div>
                 </div>
                 <div class="right-column">
@@ -34,7 +35,7 @@
                     <label for="selectfile">Seleziona immagine profilo</label>
                 </div>
             </div>
-            <button type="button" class="larger-button" (click)="fadeoutsv('access/register/end-complete-profile')">Registrati</button>
+            <button type="button" class="larger-button" id="confirm-button" (click)="fadeoutsv('access/register/end-complete-profile')">Registrati</button>
         </form>
     </div>
 </div>
