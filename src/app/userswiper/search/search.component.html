@@ -25,7 +25,7 @@
                                 <h3>{{item.surname}} {{item.name}}<i class="bi bi-patch-check-fill verify" *ngIf="item.verified"></i></h3>
                                 <p>{{item.age}}, {{item.city}}, {{item.faculty}}</p>
                                 <p>{{item.locationAndTime}}</p>
-                                <button (click)="sendrequest(item.id)" *ngIf="item.matched[user.id] == undefined && this.user.rejected.indexOf(item.id) == -1 && item.rejected.indexOf(this.user.id) == -1 && item.requests[user.id] != null" [id]="'button-'+item.id">Chiedi contatto</button>
+                                <button (click)="sendrequest(item.id)" *ngIf="item.matched[user.id] == undefined && this.user.rejected.indexOf(item.id) == -1 && item.rejected.indexOf(this.user.id) == -1 && item.requests[user.id] == null" [id]="'button-'+item.id">Chiedi contatto</button>
                                 <div *ngIf="item.matched[user.id] != undefined && this.user.rejected.indexOf(item.id) == -1 && item.requests[user.id] == null" class="buttons">
                                     <a [href]="'https://www.instagram.com/'+item.instagram.substring(1)" target="_blank"><button class="firstButton">IG: {{item.instagram}}</button></a>
                                     <a (click)="copy(item.telegram)"><button>TG: {{item.telegram}}</button></a>
