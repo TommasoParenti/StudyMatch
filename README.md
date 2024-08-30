@@ -1,21 +1,22 @@
 
 # :school: StudyMatch
 
-StudyMatch è un'applicazione che ho creato come progetto per l'esame di Sviluppo Applicazioni Web di UniPi. Questa è una web app che permette di trovare, tra tutti gli utenti iscritti, tramite un semplice sistema di like o dislike, persone con cui studiare. E' un app che permette in pratica agli studenti universitari di trovare altre persone tramite il quale fare gruppi di lavoro e studio.
+StudyMatch è un'applicazione che ho creato come progetto per l'esame di Sviluppo Applicazioni Web di UniPi. L'obiettivo della web app è quello di permettere di trovare tramite un semplice sistema di like o dislike, persone con cui studiare. E' un app che permette in pratica agli studenti universitari di trovare altre persone tramite il quale fare gruppi di lavoro e studio. L'appllicazione è in pratica divisa in due:
+- **Sezione singole persone**: si presenta una carta profilo like-abile con informazioni sulla persona. Dopo un like, l’altra persona viene informata tramite una richiesta; a quel punto se l'altra persona accetta la richiesta o ti lascia like, è possibile contattarla tramite telegram, tramite Instagram o tramite numero di telefono (Tutti e 3 obbligatori).
+- **Sezione gruppi**: vi è la possibilità di creare un proprio gruppo da far like-are; quando questo viene fatto si richiede l’ingresso nel gruppo o meno. Se una persona che appartiene al gruppo accetta la richiesta allora viene aggiunto il nuovo membro, che potrà vedere le informazioni del gruppo insieme ai vari contatti: un link telegram ad un gruppo, l'instagram dell'admin del gruppo instagram e il link per il gruppo whatsapp (Tutti e 3 obbligatori).
 
 Il sito è stato hostato tramite firebase: [StudyMatch](https://studymatch-99924.firebaseapp.com/).
 
 La console firebase è la seguente: [Console firebase](https://console.firebase.google.com/u/0/project/studymatch-99924/overview)
 
 > [!NOTE]
-> E' una applicazione complessa da testare, essendo pensata per l'utilizzo con più persone; per questo all'interno dei file troverà uno script per popolare il DB. 
+> E' una applicazione complessa da testare, essendo pensata per l'utilizzo con più persone; per questo all'interno dei file troverà uno script per popolare il DB e vedere la casistica in cui ci siano un paio di persone da swipare. Questi chiaramente non potranno accettare ne inviare richieste, essendo semplici utenti inanimati.
 
 > [!NOTE]
 > Per fare un ottimo testing consiglio di utilizzare due email differenti email in proprio possesso in modo da verificare anche il matching, l'aggiungersi ai gruppi, ecc.
 
-
 ## Struttura dell'applicazione
-- **/Access**
+- **/Access** (Pagina di accesso)
     - **/Login** (Pagina di login)
     - **/Register** (Pagina di registrazione)
         - **/Complete-profile** (Pagina per inserire le prime informazioni per il profilo)
@@ -36,11 +37,11 @@ La console firebase è la seguente: [Console firebase](https://console.firebase.
 ## Utilizzo
 Per utilizzare questa applicazione basta andare al seguente link: [StudyMatch](https://studymatch-99924.firebaseapp.com/) oppure avviare l'applicazione tramite il comando `ng serve`. 
 
-L'applicazione possiede un sistema di autenticazione tramite firebase, potendosi registrare e poi accedere tramite email&pw, Google, Facebook e GitHub; solo nel primo caso è richiesto di verificarsi tramite un email. E' possibile anche richiedere un cambio di password tramite il pulsante apposito.
+L'applicazione possiede un sistema di autenticazione tramite firebase, potendosi registrare e poi accedere tramite email&pw, Google, Facebook e GitHub; solo nel primo caso è richiesto di verificarsi tramite un email. E' possibile anche richiedere un cambio di password tramite il pulsante apposito. Non esistono credenziali admin.
 
-A quel punto si arriva alla pagina userswiper; swipando a destra accettiamo uno user, mentre swipando a sinistra lo rifiutiamo. Scrollando troviamo inoltre le informazioni sull'attuale carta.
+A quel punto si arriva alla pagina userswiper; swipando a destra accettiamo uno user, mentre swipando a sinistra lo rifiutiamo; nel momento in cui lo swipiamo a destra li inviamo una richiesta. Scrollando troviamo inoltre le informazioni sull'attuale carta.
 
-Nella navbar troviamo anche i pulsanti per accedere alla ricerca, il controllo delle richieste, il controllo dei match, la sezione per filtrare in base alla necessità, la possibilità di fare log out e infine il profilo personale.
+Nella navbar troviamo anche i pulsanti per accedere alla ricerca, il controllo delle richieste (dove arrivano le richieste che tu puoi accettare o rifiutare), il controllo dei match (dove ci sono le informazioni delle persone con cui hai matchato), la sezione per filtrare in base alla necessità, la possibilità di fare log out e infine il profilo personale.
 
 In alto al centro c'è un segmented control che permette di cambiare da userswiper a groupswiper.
 
