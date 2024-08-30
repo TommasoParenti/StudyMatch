@@ -5,7 +5,7 @@ StudyMatch è un'applicazione che ho creato come progetto per l'esame di Svilupp
 - **Sezione singole persone**: si presenta una carta profilo like-abile con informazioni sulla persona. Dopo un like, l’altra persona viene informata tramite una richiesta; a quel punto se l'altra persona accetta la richiesta o ti lascia like, è possibile contattarla tramite telegram, tramite Instagram o tramite numero di telefono (Tutti e 3 obbligatori).
 - **Sezione gruppi**: vi è la possibilità di creare un proprio gruppo da far like-are; quando questo viene fatto si richiede l’ingresso nel gruppo o meno. Se una persona che appartiene al gruppo accetta la richiesta allora viene aggiunto il nuovo membro, che potrà vedere le informazioni del gruppo insieme ai vari contatti: un link telegram ad un gruppo, l'instagram dell'admin del gruppo instagram e il link per il gruppo whatsapp (Tutti e 3 obbligatori).
 
-Il sito è stato hostato tramite firebase: [StudyMatch](https://studymatch-99924.firebaseapp.com/).
+L'app è stata hostata tramite firebase: [StudyMatch](https://studymatch-99924.firebaseapp.com/).
 
 La console firebase è la seguente: [Console firebase](https://console.firebase.google.com/u/0/project/studymatch-99924/overview)
 
