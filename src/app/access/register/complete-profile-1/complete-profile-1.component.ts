@@ -116,6 +116,13 @@ export class CompleteProfile1Component implements OnInit{
     } else if(this.file == undefined) {
       throw new Error("Devi caricare un'immagine profilo.");
     }
+    
+    var array_set = new Set(this.cities);
+    if(!(array_set.has(city.toLowerCase()))) {
+      throw new Error("Devi inserire una città o provincia valida italiana (basta il nome della città).");
+    }
+
+
     await this.onFileSelected(this.file);
     const user: any = await firstValueFrom(this.authService.getUser());
     await this.db.updateItem("user", user.uid, {
