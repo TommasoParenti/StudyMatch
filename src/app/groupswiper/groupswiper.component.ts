@@ -108,13 +108,13 @@ export class GroupswiperComponent implements OnInit{
     }
   }
 
-  private matchesFilter(element: User): boolean {
-    const medium_age = parseInt(localStorage.getItem("medium_age") || "NaN");
-    const group_time = localStorage.getItem("group_time");
-    const group_location = localStorage.getItem("grouplocation");
+  private matchesFilter(element: Group): boolean {
+    const medium_age = parseInt(localStorage.getItem("age") || "NaN");
+    const group_time = localStorage.getItem("time");
+    const group_location = localStorage.getItem("location");
 
     return (
-      (isNaN(medium_age) || (element.age < medium_age + 5 && element.age > medium_age - 5)) &&
+      (isNaN(medium_age) || (element.medium_age < medium_age + 5 && element.medium_age > medium_age - 5)) &&
       (group_time === null || group_time === "-" || element.locationAndTime.toLowerCase().indexOf(group_time.toLowerCase()) != -1) &&
       (group_location === null || group_location === "undefined" || element.locationAndTime.toLowerCase().indexOf(group_location.toLowerCase()) != -1)
     );
