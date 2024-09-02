@@ -60,6 +60,11 @@ Per creare un profilo è necessario prima registrarsi tramite uno delle modalit�
 - Account instagram
 - Numero di telefono
 
+Per la verifica del profilo, e quindi per avere la spunta blu, ci porta anche ad una pagina dove bisogna scattarsi una semplice foto che non verrà né utilizzata né salvata, in modo da poter controllare che non sia un bot a fare il profilo; l'ho preferito ai captcha perchè sarebbe possibile in futuro aggiugnere un AI che verifica il viso, come tinder.
+
+### QR code
+Se si va sul proprio profilo personale, scrollando la pagina tramite i puntini in mezzo, si genera un QR code tramite l'API: [QR code API](https://goqr.me/api/). Questo se viene scansionato porta alla pagina search con il nostro nome e congome nella ricerca in modo che l'altra persona possa fare la richiesta per i contatti (Tutto ciò funziona chiaramente se siamo loggati, altrimenti c'è bisogno di scansionarlo nuovamente). 
+
 ### Consigli sul testing dell'applicazione
 Testare questa applicazione risulta complesso a causa del fatto che è un'applicazione studiata per più persone; per questo consiglio di creare due account propri, tramite due metodi di registrazione e accesso differenti, per poi provare le varie opzioni tramite i due account (accettarsi entrambi per fare match, rifiutarsi entrambi, ...); per migliore l'esperienza di testing fornisco il db firebase che trova al seguente link: [Console firebase](https://console.firebase.google.com/u/0/project/studymatch-99924/overview); dovrebbe già avere l'invito per partecipare, ma se non lo possiede lo può richiedere a questa email: t.parenti1@studenti.unipi.it.
 
@@ -67,6 +72,3 @@ Invece per vedere il caso in cui ci sono più persone nel db, ho fornito uno scr
 
 > [!NOTE]
 > Il filtro ha una funzione particolare: l'età selezionata va nel range di 5 anni; ciò significa che prende persone che hanno +5 anni o -5 anni dell'età selezionata. Inoltre il range è già preselezionato, quindi modificarlo sempre!
-
-### QR code
-Se si va sul proprio profilo personale, scrollando la pagina tramite i puntini in mezzo, si genera un QR code tramite l'API: [QR code API](https://goqr.me/api/). Questo se viene scansionato porta alla pagina search con il nostro nome e congome nella ricerca in modo che l'altra persona possa fare la richiesta per i contatti (Tutto ciò funziona chiaramente se siamo loggati, altrimenti c'è bisogno di scansionarlo nuovamente). 
