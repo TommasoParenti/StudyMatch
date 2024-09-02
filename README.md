@@ -46,6 +46,7 @@ Nella navbar troviamo anche i pulsanti per accedere alla ricerca, il controllo d
 In alto al centro c'è un segmented control che permette di cambiare da userswiper a groupswiper.
 
 Il groupswiper è praticamente strutturato come lo userswiper con la sola opzione di creare un gruppo.
+
 ### Creare un profilo
 Per creare un profilo è necessario prima registrarsi tramite uno delle modalità possibili, e poi è necessario inserire diverse informazioni:
 - Nome
@@ -66,3 +67,6 @@ Invece per vedere il caso in cui ci sono più persone nel db, ho fornito uno scr
 
 > [!NOTE]
 > Il filtro ha una funzione particolare: l'età selezionata va nel range di 5 anni; ciò significa che prende persone che hanno +5 anni o -5 anni dell'età selezionata. Inoltre il range è già preselezionato, quindi modificarlo sempre!
+
+### QR code
+Se si va sul proprio profilo personale, scrollando la pagina tramite i puntini in mezzo, si genera un QR code tramite l'API: [QR code API](https://goqr.me/api/). Questo se viene scansionato porta alla pagina search con il nostro nome e congome nella ricerca in modo che l'altra persona possa fare la richiesta per i contatti (Tutto ciò funziona chiaramente se siamo loggati, altrimenti c'è bisogno di scansionarlo nuovamente). 
