@@ -30,8 +30,8 @@ export class FilterComponent {
     }
 
     if(localStorage.getItem("time") != null) {
-      this.timevalue_1 = localStorage.getItem("time").split("-")[0];
-      this.timevalue_2 = localStorage.getItem("time").split("-")[1];
+      this.timevalue_1 = localStorage.getItem("time").split("-")[0]+":00";
+      this.timevalue_2 = localStorage.getItem("time").split("-")[1]+":00";
     }
     if(localStorage.getItem("location") != null) {
       this.locationvalue = localStorage.getItem("location");
@@ -113,8 +113,8 @@ export class FilterComponent {
   }
 
   filter() { 
-    var time_1 = (document.getElementById("time-1") as HTMLInputElement).value;
-    var time_2 = (document.getElementById("time-2") as HTMLInputElement).value;
+    var time_1 = (document.getElementById("time-1") as HTMLInputElement).value.split(":")[0];
+    var time_2 = (document.getElementById("time-2") as HTMLInputElement).value.split(":")[0];
     var location = (document.getElementById("locationsearch") as HTMLInputElement).value;
     var city = (document.getElementById("citysearch") as HTMLInputElement)?.value;
     var faculty = (document.getElementById("facultysearch") as HTMLInputElement)?.value;

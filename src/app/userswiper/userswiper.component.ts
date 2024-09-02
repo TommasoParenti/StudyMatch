@@ -108,6 +108,8 @@ export class UserswiperComponent implements OnInit{
   private matchesFilter(element: User): boolean {
     const age = parseInt(localStorage.getItem("age") || "NaN");
     const time = localStorage.getItem("time");
+    console.log(time);
+    console.log(element.locationAndTime);
     const location = localStorage.getItem("location");
     const city = localStorage.getItem("city");
     const faculty = localStorage.getItem("faculty");
