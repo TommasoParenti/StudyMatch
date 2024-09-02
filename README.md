@@ -63,3 +63,6 @@ Per creare un profilo è necessario prima registrarsi tramite uno delle modalit�
 Testare questa applicazione risulta complesso a causa del fatto che è un'applicazione studiata per più persone; per questo consiglio di creare due account propri, tramite due metodi di registrazione e accesso differenti, per poi provare le varie opzioni tramite i due account (accettarsi entrambi per fare match, rifiutarsi entrambi, ...); per migliore l'esperienza di testing fornisco il db firebase che trova al seguente link: [Console firebase](https://console.firebase.google.com/u/0/project/studymatch-99924/overview); dovrebbe già avere l'invito per partecipare, ma se non lo possiede lo può richiedere a questa email: t.parenti1@studenti.unipi.it.
 
 Invece per vedere il caso in cui ci sono più persone nel db, ho fornito uno script per popolare il db con altri 3 utenti random. 
+
+> [!NOTE]
+> Il filtro ha una funzione particolare: l'età selezionata va nel range di 5 anni; ciò significa che prende persone che hanno +5 anni o -5 anni dell'età selezionata. Inoltre il range è già preselezionato, quindi modificarlo sempre!
